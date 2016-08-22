@@ -6,7 +6,7 @@ public class FundamentalsP4
         for( int number = 1; number < 11; number ++ )
         {
             
-            System.out.println(number + "\t" + number*number + "\t" + ( int )( Math.random() ));
+            System.out.println(number + "\t" + number*number + "\t" + ( int )( Math.random()*(number*number-number)+number));
         } //end for
         
      
