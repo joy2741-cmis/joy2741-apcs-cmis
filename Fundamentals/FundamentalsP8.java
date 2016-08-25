@@ -1,18 +1,20 @@
 
+
 public class FundamentalsP8
 {
    public static void main( String[] args )
    {
        String[] favArtist = { "Artist1", "Artist2", "Artist3" };
        
-       for( int i = 0; i < favArtist.length; i++)
+       for( int index = 0; index < favArtist.length; index++)
        {
-           String Artist = favArtist[i];
-           System.out.println( Artist );
+           System.out.println( favArtist[ index ] );
         }
-       
-            System.out.println( "\n" + "\n" );
-            
-            
+        
+        favArtist[(int)(Math.random()*3)]= "Michael Jackson";
+        
+        /* for( int index = 0; */ 
+        
     }
 }
+       

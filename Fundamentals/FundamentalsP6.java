@@ -1,33 +1,20 @@
 
-/**
- * Write a description of class FundamentalsP6 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class FundamentalsP6
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class FundamentalsP6
-     */
-    public FundamentalsP6()
+    public static void main( String[] args )
     {
-        // initialise instance variables
-        x = 0;
+        int[] nums = new int[50];
+        
+        for( int index = 0; index < nums.length; index++ )
+        {
+            nums[ index ] = (int)(Math.random()*100);
+        }
+        
+        for( int index = 0; index < nums.length; index++ )
+        {
+            System.out.print( nums[ index ] + " ");
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+}
 }
