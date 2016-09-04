@@ -13,8 +13,26 @@ public class FundamentalsP8
         
         favArtist[(int)(Math.random()*3)]= "Michael Jackson";
         
-        /* for( int index = 0; */ 
+       System.out.println( "\n" ); 
+             
+        for( int index = 0; index < favArtist.length; index++)
+        {
+            System.out.println( favArtist[ index ]);
+        }
         
+        System.out.println( "\n" );
+        
+        for (int index = 0; index < favArtist.length; index++ )
+        {
+            if (favArtist [index ].equals("Michael Jackson"))
+            {
+                System.out.println("We found Michael!");
+            }
+            else
+            {
+                System.out.println("No Michael in music");
+           }
+      }
     }
 }
        

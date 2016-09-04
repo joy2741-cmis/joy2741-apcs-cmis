@@ -1,47 +1,27 @@
- 
-
 public class ProblemA
 {
     public static void main( String[] args )
     {
-        double[] array = new double[1000000];
-        
-       /* for( int index = 0; index < 1; index++ )
-        {
-            array[ index ] = (int)(((((Math.random()*1000000)/3)/5)/7)/11);
+        int[] array = new int[1000000];
             
-            for( index = 0; index < array.length; index++ )
-            {
-                System.out.println( array[index] );
-        }
-        */
        
-       
-       for (double i = 0; i < 1; i++)
+       for ( int index = 0; index < 1; index++)
        { 
-           array[ i ] = (int)(Math.random()*1000000);
+           array[ index ] = (int)(Math.random()*array.length);
            
       
-    if (index % 3 == 0)
-    {
-        System.out.println( i );
+   if (index % 3 == 0 && index % 5 == 0 && index % 7 == 0 && index % 11 == 0)
+   {
+        System.out.println( array[ index ] );
     }
-    else if (index % 5 == 0)
+  
+    else
     {
-        System.out.println( i );
-    }
-    else if (index % 7 == 0)
-    {
-        System.out.println( i );
-    }
-    else if (index % 11 == 0)
-    {
-        System.out.println( i );
-    }
+        System.out.println( "try again" );
     
    }
     
-    //% == 0?
-    //if divisible by # print " "
+   
+   }
    }
 }

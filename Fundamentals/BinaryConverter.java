@@ -17,9 +17,11 @@ public class BinaryConverter
         
         char[] binArray = bin.toCharArray();
         int total = 0;
+        
         for (int index = binArray.length - 1; index >= 0; index--)
         {
             int num = 1;
+                        
             if (index == binArray.length - 1)
             {
                 if ( binArray[ index ] == 1)
@@ -28,9 +30,11 @@ public class BinaryConverter
                 }
             }
             
-            else if ( true)
+            else if ( true )
+            
             {
                 int counter = binArray.length - index;
+                
                 while(counter > 1)
                 {
                     num = num * 2;
