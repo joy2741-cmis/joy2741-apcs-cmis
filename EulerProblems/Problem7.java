@@ -1,33 +1,20 @@
 
-/**
- * Write a description of class Problem7 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Problem7
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Problem7
-     */
-    public Problem7()
+    public static void main( String[] args )
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        int i = 0;
+        
+        for(i = 2; i < 7; i++)
+        {
+            if (i % i == 1 && i % 1 == i)
+            {
+                
+            }
+            
+        }
+            
+        
+        
     }
 }
