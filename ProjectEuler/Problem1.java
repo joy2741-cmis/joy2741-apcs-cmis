@@ -13,7 +13,7 @@ public class Problem1
                 //System.out.println(num);
                 sum = sum + num;
             }
-            
+    
         }
         
         System.out.println(sum);
