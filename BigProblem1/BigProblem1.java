@@ -5,43 +5,55 @@ public class BigProblem1
     public static void main( String[] args )
     {
         
-        String input = JOptionPane.showInputDialog( "Type a number");
+        String input = JOptionPane.showInputDialog( "Type a number"  );
         int maxRuntime = Integer.parseInt(input);
         int runtime = 0;
         
        int[] nums = new int[maxRuntime];
-       int i = 0;
+       int i;
+       int order = 0;
        
-              
-        
-       
-        System.out.println("Histogram");
-    
-       
-            for( runtime = 0; runtime < 100; runtime++)
-            {
-                
-                for( runtime = 0; runtime < maxRuntime; runtime++ )
-                {
-                      nums[ i ] = (int)(Math.random()*100);
-                      System.out.println( nums[ i ]);
-                    }     
-                     
-                
-                if (nums[ i ] == (runtime))
-                {
-                    System.out.println(runtime + ": " + "#");
-                }
-                else
-                {
-                    System.out.println(runtime + ": ");
-                }
-                
-            
+       int sum = 0;
+       int avg = 0;
+      
+       //histogram
+       for( i = 0, runtime = 0; runtime < maxRuntime; runtime++ )
+       {
+           nums[i] = (int)(Math.random()*100);
+           System.out.print(nums[i] + " ");
+           sum = sum + nums[i];
+           
+           
+           
         }
+       
+        System.out.print("Test" + nums[i] + " ");
         
+        /*
+       while( runtime < maxRuntime)
+            {
+                nums[i] = (int)(Math.random()*100);
+                runtime++;
+                         
+            }
+            
+          System.out.println( nums[i] );
+                    
+                       
+                 for( order = 0; order < 100; order++ )
+                            {
+                                System.out.println(order + ": ");
+                 
+                            }
+      */
+     
+     
+            }
+               
+        
+         
     }
-}
+
 
 /* ask the user to type a number (num)
  * generate (num) amount of random numbers between 0 and 99
