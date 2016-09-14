@@ -1,70 +1,64 @@
 import javax.swing.JOptionPane;
-
 public class BigProblem1
 {
-    public static void main( String[] args )
+    public static void main( String[] args)
     {
-        
         String input = JOptionPane.showInputDialog( "Type a number"  );
         int maxRuntime = Integer.parseInt(input);
+        int[] array = new int [maxRuntime];
+        int i = 0;
         int runtime = 0;
+        int order = 0;
+
+        String counter = "";
+        int sum = 0;
+
         
-       int[] nums = new int[maxRuntime];
-       int i;
-       int order = 0;
-       
-       int sum = 0;
-       int avg = 0;
-      
-       
-        while(runtime < maxRuntime)
+
+        for( runtime = 0, i = 0; runtime < maxRuntime; runtime++, i++)
         {
-          
-            for( i = 0, runtime = 0; runtime < maxRuntime; runtime++ )
-                {
-                    nums[i] = (int)(Math.random()*100);
-                    System.out.println(nums[i]);
-                    
-                }
-                 
-           
-            for( order = 0; order < 100; order++ )
+            array[ i ] = (int)(Math.random()*100);
+            System.out.println("i = " + i + " " + "|| RandomNum = " + array[ i ]);
+            sum = sum + array[ i ];
+        }//end for
+
+        System.out.println("HISTOGRAM");
+
+        for( order = 0; order < 100; order++)
+        {
+
+            for( i = 0; i < maxRuntime; i++)
             {
-                
-                /*
-                 * ex. maxRuntime = 5;
-                 * Generate 5 numbers into an array
-                 * ex. nums[i] = {3, 84, 2, 11, 14};
-                 * for loop: print order from 0-99, order++
-                 *      print "order + : "
-                 *          for loop: run through nums[i] (i = 0; i<nums.length; i++)
-                 *               if (nums[i] is equal to order)
-                 *                       --> print "#"
-                 *           ex. nums[1] = 3, which is equals to order[4] --> print # 
-                 *           
-                 * 
-                 */
-                
-                    System.out.println(order + ": ");  
-                    
-                        
-            }
-               
+                if (array[ i ] == order)
+                {
+                    counter = counter + "#";
+
+                }
+
+            }//end for
+
+            System.out.println(order + ": " + counter);
+            counter = "";
+        }//end for
+
+        int avg = sum/maxRuntime;
+
+        //Minimum
         
-        }
-    }
-}
+        
+        //Maximum
+        
+        
+        //Mode
+        
+        System.out.println("\n");
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + avg);
+    }//end method
+}//end class
 
-
-/* ask the user to type a number (num)
- * generate (num) amount of random numbers between 0 and 99
- * printout every number from 0-99 with #  
- * minimum
- * maximum
- * sum
- * avg
- * mode
- * 
+/*
+ * Empty string
+ * Random numbers --> add to string
  * 
  */
-
