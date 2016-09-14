@@ -16,43 +16,44 @@ public class BigProblem1
        int sum = 0;
        int avg = 0;
       
-       //histogram
-       for( i = 0, runtime = 0; runtime < maxRuntime; runtime++ )
-       {
-           nums[i] = (int)(Math.random()*100);
-           System.out.print(nums[i] + " ");
-           sum = sum + nums[i];
-           
-           
-           
-        }
        
-        System.out.print("Test" + nums[i] + " ");
-        
-        /*
-       while( runtime < maxRuntime)
-            {
-                nums[i] = (int)(Math.random()*100);
-                runtime++;
-                         
-            }
-            
-          System.out.println( nums[i] );
+        while(runtime < maxRuntime)
+        {
+          
+            for( i = 0, runtime = 0; runtime < maxRuntime; runtime++ )
+                {
+                    nums[i] = (int)(Math.random()*100);
+                    System.out.println(nums[i]);
                     
-                       
-                 for( order = 0; order < 100; order++ )
-                            {
-                                System.out.println(order + ": ");
+                }
                  
-                            }
-      */
-     
-     
+           
+            for( order = 0; order < 100; order++ )
+            {
+                
+                /*
+                 * ex. maxRuntime = 5;
+                 * Generate 5 numbers into an array
+                 * ex. nums[i] = {3, 84, 2, 11, 14};
+                 * for loop: print order from 0-99, order++
+                 *      print "order + : "
+                 *          for loop: run through nums[i] (i = 0; i<nums.length; i++)
+                 *               if (nums[i] is equal to order)
+                 *                       --> print "#"
+                 *           ex. nums[1] = 3, which is equals to order[4] --> print # 
+                 *           
+                 * 
+                 */
+                
+                    System.out.println(order + ": ");  
+                    
+                        
             }
                
         
-         
+        }
     }
+}
 
 
 /* ask the user to type a number (num)
