@@ -23,6 +23,7 @@ public class BigProblem1
         }//end for
 
         System.out.println("HISTOGRAM");
+        
 
         for( order = 0; order < 100; order++)
         {
