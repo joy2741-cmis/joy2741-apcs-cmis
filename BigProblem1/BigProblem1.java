@@ -58,8 +58,3 @@ public class BigProblem1
     }//end method
 }//end class
 
-/*
- * Empty string
- * Random numbers --> add to string
- * 
- */
