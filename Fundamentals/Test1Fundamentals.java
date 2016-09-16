@@ -15,7 +15,7 @@ public class Test1Fundamentals
         for( runtime = 0, i = 0; runtime < array.length; runtime++, i++)
         {
 
-            array[i] = (double)(Math.random()*4); //need to take out zero
+            array[i] = (double)(Math.random()*50); //need to take out zero
             System.out.println(i + ": " + array[i]);
 
         }//end for 
