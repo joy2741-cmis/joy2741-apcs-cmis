@@ -4,11 +4,11 @@ public class fishTank
 
     private boolean fish; //true --> there's fish //false --> no fish
     private int numberOfFish;
-    private String fishNumber = "#"; 
+    private String fishNumber = "#0"; 
     private double tankHeight;
     private boolean clean; //true --> clean //false --> dirty
 
-    public fishTank( boolean fish, int numberOfFish, String fishNumber )
+    public fishTank( boolean fish )
     {
         this.fish = fish;
         if (  numberOfFish > 0)
@@ -20,22 +20,32 @@ public class fishTank
             this.fish = false;
         }//end if
         this.numberOfFish = numberOfFish;
+        numberOfFish = (int)(Math.random()*10);
+
         this.fishNumber = fishNumber;
-        for(int i = 0; i < numberOfFish; i++ )
+        /*
+        for()
         {
-            System.out.println("i: " +  i);
-            fishNumber += "i";
-        }//end for
+            
+        }//end for       
+        
+        String fishName = fishNumber + numberOfFish;
+        */
 
     }//end fishTank
 
     public static void main( String[] args)
     {
-        fishTank F1 = new fishTank(true, 3, "#");
+        fishTank F1 = new fishTank(true);
         System.out.println(F1);
-        System.out.println(F1.fish);
-        System.out.println(F1.numberOfFish);
-        System.out.println(F1.fishNumber);
+        //System.out.println(F1.fish);
+        //System.out.println(F1.numberOfFish);
+        //System.out.println(F1.fishNumber);
     }//end method
 
+    public String toString()
+    {
+        String output = "Fish? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
+        return output;
+    }
 }

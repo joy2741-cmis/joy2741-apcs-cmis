@@ -1,6 +1,8 @@
 #BlueJ class context
-comment0.params=fish\ numberOfFish\ fishNumber
-comment0.target=fishTank(boolean,\ int,\ java.lang.String)
+comment0.params=fish
+comment0.target=fishTank(boolean)
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
