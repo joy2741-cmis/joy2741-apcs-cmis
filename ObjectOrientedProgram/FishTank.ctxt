@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=fish
+comment0.target=FishTank(boolean)
+comment1.params=
+comment1.target=boolean\ getFish()
+comment2.params=newFish
+comment2.target=void\ setfish(boolean)
+comment3.params=
+comment3.target=int\ getNumberOfFish()
+comment4.params=newNumberOfFish
+comment4.target=void\ setNumberOfFish(int)
+comment5.params=
+comment5.target=java.lang.String\ getFishNumber()
+comment6.params=newFishNumber
+comment6.target=void\ setFishNumber(java.lang.String)
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9
