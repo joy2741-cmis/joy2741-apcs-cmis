@@ -1,12 +1,16 @@
 
 public class fishTank
 {
-
+    //FIELDS
+    
+    //class variables
     private boolean fish; //true --> there's fish //false --> no fish
     private int numberOfFish;
     private String fishNumber = "#0"; 
     private double tankHeight;
     private boolean clean; //true --> clean //false --> dirty
+    
+    //instance variables
 
     public fishTank( boolean fish )
     {
@@ -33,7 +37,9 @@ public class fishTank
         */
 
     }//end fishTank
-
+    
+    //METHODS
+    //constructors
     public static void main( String[] args)
     {
         fishTank F1 = new fishTank(true);
@@ -45,7 +51,7 @@ public class fishTank
 
     public String toString()
     {
-        String output = "Fish? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
+        String output = "Are there any fish in the tank? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
         return output;
     }
 }
