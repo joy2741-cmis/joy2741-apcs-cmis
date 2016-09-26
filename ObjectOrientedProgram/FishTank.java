@@ -7,6 +7,10 @@ public class FishTank
     private String fishNumber = "#0"; 
     private double tankHeight;
     private boolean clean; //true --> clean //false --> dirty
+    
+    //public static final double[] fishLength = new double[] {80, 36, 7 }; //commoncarp, oscar, siamese fighting fish
+    
+    //public static final GOLDFISH = 0;
 
     public FishTank( boolean fish )
     {
@@ -17,25 +21,31 @@ public class FishTank
         this.fishNumber = fishNumber;
 
     }//end fishTank
-
     
+    /*
+     * 
+     * 
+     */
+
+    /*
     public boolean getFish(){
-        
-        if( fish )
-        {
-            fish = "";
-        }
-        else 
-        {
-            fish =  "The tank is empty";
-        }
 
-        return getFish;
+    if( fish )
+    {
+    fish = "";
+    }
+    else 
+    {
+    fish =  "The tank is empty";
+    }
+
+    return getFish;
     }//end getter fish
-    
-        public void setfish( boolean newFish )
-        {
-            fish = newFish;
+     */
+
+    public void setfish( boolean newFish )
+    {
+        fish = newFish;
     }// end setter fish
 
     public int getNumberOfFish()
@@ -50,7 +60,7 @@ public class FishTank
 
     public String getFishNumber()
     {
-        
+
         return fishNumber;
     }//end getter fishNumber
 
@@ -68,7 +78,7 @@ public class FishTank
     {
         tankHeight = mewTankHeight;
     }//end setter tankHeight
-    
+
     public static void main( String[] args)
     {
         FishTank F1 = new FishTank(true);
@@ -78,7 +88,7 @@ public class FishTank
 
     public String toString()
     {
-        String output = "Fish? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
+        String output = "Are there any fish? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
         return output;
     }
 }

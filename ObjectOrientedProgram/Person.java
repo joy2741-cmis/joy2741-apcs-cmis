@@ -1,11 +1,19 @@
 
 public class Person
 {
-    private int age;
+    private double age;
     private boolean gender; //true = female || false = male
     private double yearsLeft = 0;
     private double mLifeEx = 80.5;
     private double fLifeEx = 86.8;
+    
+    public Person( )
+    {
+        this.age = age;
+        //age = (Math.random()*100.0);
+       
+        
+    }//end person
 
     public double getYears()
     {
@@ -18,8 +26,9 @@ public class Person
         {
             yearsLeft = mLifeEx - age;
         }
-        return yearsLeft; 
-    }//end Person
+        return yearsLeft;
+        
+    }//end getYears
 
 }//end class Person
 

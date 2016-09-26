@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=double\ getYears()
-numComments=1
+comment0.target=Person()
+comment1.params=
+comment1.target=double\ getYears()
+numComments=2
