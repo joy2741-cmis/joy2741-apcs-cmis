@@ -7,51 +7,36 @@ public class FishTank
     private String fishNumber = "#0"; 
     private double tankHeight;
     private boolean clean; //true --> clean //false --> dirty
-    
-    //public static final double[] fishLength = new double[] {80, 36, 7 }; //commoncarp, oscar, siamese fighting fish
-    
-    //public static final GOLDFISH = 0;
+    private String name;
 
-    public FishTank( boolean fish )
+    public static final double[] fishLength = new double[] {80, 36, 7}; //commoncarp, oscar, siamese fighting fish
+    public static final int COMMONCARP = 1;
+    public static final int OSCAR = 2;
+    public static final int SIAMESE = 3;
+
+    public FishTank( String name )
     {
         this.fish = fish;
         this.numberOfFish = numberOfFish;
-        numberOfFish = (int)(Math.random()*10);
-
         this.fishNumber = fishNumber;
 
     }//end fishTank
-    
-    /*
-     * 
-     * 
-     */
 
-    /*
-    public boolean getFish(){
-
-    if( fish )
+    public boolean getFish()
     {
-    fish = "";
-    }
-    else 
-    {
-    fish =  "The tank is empty";
-    }
-
-    return getFish;
+        return fish;
     }//end getter fish
-     */
+
+    public int getNumberOfFish()
+    {
+        numberOfFish = (int)(Math.random()*20);
+        return numberOfFish;
+    }
 
     public void setfish( boolean newFish )
     {
         fish = newFish;
     }// end setter fish
-
-    public int getNumberOfFish()
-    {
-        return numberOfFish;
-    }//end getter numberOfFish
 
     public void setNumberOfFish( int newNumberOfFish )
     {
@@ -76,20 +61,22 @@ public class FishTank
 
     public void setTankHeight( double newTankHeight )
     {
-        tankHeight = mewTankHeight;
+        tankHeight = newTankHeight;
     }//end setter tankHeight
 
     public static void main( String[] args)
     {
-        FishTank F1 = new FishTank(true);
+        FishTank F1 = new FishTank("true");
         System.out.println(F1);
+        System.out.println(F1.numberOfFish);
 
     }//end method
 
     public String toString()
     {
         String output = "Are there any fish? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
+
         return output;
-    }
+    }//end string
 }
 
