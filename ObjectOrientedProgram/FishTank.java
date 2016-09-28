@@ -6,6 +6,9 @@ public class FishTank
     private int numberOfFish;
     private String fishNumber = "#0"; 
     private double tankHeight;
+    private double tankWidth;
+    private double tankDepth;
+    private int tankVolume;
     private boolean clean; //true --> clean //false --> dirty
     private String name;
 
@@ -19,19 +22,50 @@ public class FishTank
         this.fish = fish;
         this.numberOfFish = numberOfFish;
         this.fishNumber = fishNumber;
-
     }//end fishTank
-
-    public boolean getFish()
+    
+    public double getTankHeight()
+    {        
+        return tankHeight;
+    }//end getter tankHeight
+    
+    public void setTankHeight( double TankHeight )
     {
-        return fish;
-    }//end getter fish
-
-    public int getNumberOfFish()
+        tankHeight = (Math.random()*50)+5;
+    }//end setter tankHeight
+    
+    public double getTankWidth()
+    {
+        return tankWidth;
+    }//end getter tankWidth
+     
+    public void setTankWidth( double TankWidth )
+    {
+        tankWidth = (Math.random()*50)+5;
+    }//end setter tankWidth
+        
+        public int getNumberOfFish()
     {
         numberOfFish = (int)(Math.random()*20);
         return numberOfFish;
     }
+    
+    
+    public boolean getFish()
+    {
+        String fishCheck;
+        
+        if( numberOfFish > 0)
+        {
+            fishCheck = "The tank is empty.";
+        }
+        else
+        {
+            fishCheck = "The tank is not empty.";
+        }//end ifelse
+        return;
+        //return fishCheck;
+    }//end getter fish
 
     public void setfish( boolean newFish )
     {
@@ -45,7 +79,6 @@ public class FishTank
 
     public String getFishNumber()
     {
-
         return fishNumber;
     }//end getter fishNumber
 
@@ -54,29 +87,21 @@ public class FishTank
         fishNumber = newFishNumber;
     }//end setter fishNumber
 
-    public double getTankHeight()
-    {
-        return tankHeight;
-    }//end getter tankHeight
-
-    public void setTankHeight( double newTankHeight )
-    {
-        tankHeight = newTankHeight;
-    }//end setter tankHeight
-
+   
+    
     public static void main( String[] args)
     {
         FishTank F1 = new FishTank("true");
         System.out.println(F1);
         System.out.println(F1.numberOfFish);
-
     }//end method
-
+    
+    /*
     public String toString()
     {
         String output = "Are there any fish? " + fish + "\nNumber of Fish: " + numberOfFish + "\nFish Name: " + fishNumber + "\nTank height: " + tankHeight + "\nClean? " + clean;
-
         return output;
     }//end string
+    */
 }
 
