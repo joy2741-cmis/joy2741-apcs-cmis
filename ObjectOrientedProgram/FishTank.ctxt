@@ -14,11 +14,12 @@ comment3.target=double\ getTankWidth()
 comment4.params=TankWidth
 comment4.target=void\ setTankWidth(double)
 comment5.params=
-comment5.target=boolean\ getFish()
-comment6.params=
-comment6.target=int\ getNumberOfFish()
+comment5.target=int\ getNumberOfFish()
+comment6.params=other
+comment6.target=boolean\ equals(FishTank)
 comment7.params=newFish
 comment7.target=void\ setfish(boolean)
+comment7.text=\n\ \ \ \ public\ boolean\ getFish()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ String\ fishCheck;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ if(\ numberOfFish\ >\ 0)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ fishCheck\ \=\ "The\ tank\ is\ empty.";\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ else\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ fishCheck\ \=\ "The\ tank\ is\ not\ empty.";\n\ \ \ \ \ \ \ \ }//end\ ifelse\n\ \ \ \ \ \ \ \ //return;\n\ \ \ \ \ \ \ \ //return\ fishCheck;\n\ \ \ \ }//end\ getter\ fish\n\ \ \ \ \n
 comment8.params=newNumberOfFish
 comment8.target=void\ setNumberOfFish(int)
 comment9.params=

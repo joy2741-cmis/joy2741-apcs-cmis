@@ -16,7 +16,9 @@ public class FishTank
     public static final int COMMONCARP = 1;
     public static final int OSCAR = 2;
     public static final int SIAMESE = 3;
-
+    
+    
+    
     public FishTank( String name )
     {
         this.fish = fish;
@@ -50,7 +52,20 @@ public class FishTank
         return numberOfFish;
     }
     
+    public boolean equals(FishTank other)
+    {
+        if( this.numberOfFish == other.numberOfFish)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }//end equals Fish
     
+    /*
     public boolean getFish()
     {
         String fishCheck;
@@ -63,10 +78,11 @@ public class FishTank
         {
             fishCheck = "The tank is not empty.";
         }//end ifelse
-        return;
+        //return;
         //return fishCheck;
     }//end getter fish
-
+    
+    */
     public void setfish( boolean newFish )
     {
         fish = newFish;
@@ -86,8 +102,7 @@ public class FishTank
     {
         fishNumber = newFishNumber;
     }//end setter fishNumber
-
-   
+     
     
     public static void main( String[] args)
     {

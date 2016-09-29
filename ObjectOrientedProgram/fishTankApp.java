@@ -11,6 +11,7 @@ public class fishTankApp
         //System.out.println(F1.fish);
         System.out.println("#: " + F1.getNumberOfFish());
         //System.out.println(F1.fishNumber);
+        System.out.println(F1.equals(F1));
     }//end method
     
 }
