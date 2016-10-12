@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Course()
+comment1.params=
+comment1.target=java.lang.String[]\ getCourses()
+comment2.params=newCourses
+comment2.target=void\ setCourses(java.lang.String[])
+comment3.params=index
+comment3.target=java.lang.String\ getCourse(int)
+comment4.params=course
+comment4.target=void\ addCourse(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
