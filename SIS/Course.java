@@ -10,17 +10,14 @@ public class Course
     {
         this.course = JOptionPane.showInputDialog( "Type your course: " );
     }//end constructor
-    
-    //Method namen
-    
+        
     public String[] getCourses()
     {
         return courses;
     }//end getNames
     
     public void setCourses( String[] newCourses )
-    {
-        
+    {        
         courses = newCourses;
     }//end setNames
     
@@ -28,13 +25,7 @@ public class Course
     {
         return courses[index];
     }//end getName
-    
-    public void addCourse( String course )
-    {
-        courses[ index ] = course;
-        index++;
-    }//end getName
-    
+           
     public String toString()
     {
         String output = "Course Name: " + course;

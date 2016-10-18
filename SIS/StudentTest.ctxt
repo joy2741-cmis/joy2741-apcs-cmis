@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=StudentTest()
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment2.params=newName
+comment2.target=void\ setName(java.lang.String)
+comment3.params=
+comment3.target=int\ getGrade()
+comment4.params=newGrade
+comment4.target=void\ setGrade(int)
+comment5.params=i
+comment5.target=java.lang.String\ getCourses(int)
+comment6.params=i\ newCourse
+comment6.target=void\ setCourses(int,\ java.lang.String)
+numComments=7
