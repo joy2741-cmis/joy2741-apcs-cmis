@@ -1,6 +1,7 @@
 import javax.swing.JOptionPane;
 public class Course
 {
+    
     private String course;
     private String[] courses;
     private int index = 0;
@@ -10,7 +11,7 @@ public class Course
         this.course = JOptionPane.showInputDialog( "Type your course: " );
     }//end constructor
     
-    //Method name
+    //Method namen
     
     public String[] getCourses()
     {
@@ -19,6 +20,7 @@ public class Course
     
     public void setCourses( String[] newCourses )
     {
+        
         courses = newCourses;
     }//end setNames
     

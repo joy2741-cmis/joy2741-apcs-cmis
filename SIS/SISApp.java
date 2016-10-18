@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+
 public class SISApp
 {
     public static void main(String [] arg){
@@ -12,6 +13,8 @@ public class SISApp
         String nameList = "";
         int outOne;
         String SNL = "";
+        int test = 0;
+
         while( output > 0 )
         {
             if( output == 3 ) //Add a Student
@@ -37,22 +40,24 @@ public class SISApp
                     }
                     else
                     {                        
-                        i = names.length+1;                       
+                        i = names.length + 1;                       
                     }
                 }
                 //output = ((Integer.parseInt(JOptionPane.showInputDialog ( "1: View Student List" + "\n2: View Course List" + "\n3: Add a Student" + "\n4: Add a Course" + "\n0: Quit")))); 
                 for (int idx =0; idx < names.length; idx++){
                     outOne = (Integer.parseInt(JOptionPane.showInputDialog ( "list of student to pick" + names[idx]+ grades[idx]  + "\n1: add course"+ "\n2:change grade" + "\n0: Quit")));
-                    
-                    if(outOne == 1)
+
+                    if(outOne == 1) //add course
                     { 
                         output = 4;
+                        System.out.println("Output: " + output);
                     }
-                    if(outOne == 0)
+                    if(outOne == 0)//quit
                     {
                         idx = names.length+1;
                         output = ((Integer.parseInt(JOptionPane.showInputDialog ("1: View Student List" + "\n2: View Course List" + "\n3: Add a Student" + "\n4: Add a Course" + "\n0: Quit")))); 
                     }
+                    
                 }
 
             }
