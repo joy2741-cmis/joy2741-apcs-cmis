@@ -13,4 +13,6 @@ comment5.params=i
 comment5.target=java.lang.String\ getCourses(int)
 comment6.params=i\ newCourse
 comment6.target=void\ setCourses(int,\ java.lang.String)
-numComments=7
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

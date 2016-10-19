@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CourseTest()
+comment1.params=
+comment1.target=java.lang.String\ getCourseName()
+comment2.params=newCourseName
+comment2.target=void\ setCourseName(java.lang.String)
+comment3.params=
+comment3.target=int\ getCourseGrade()
+comment4.params=newCourseGrade
+comment4.target=void\ setCourseGrade(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

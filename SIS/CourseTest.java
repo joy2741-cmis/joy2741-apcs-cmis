@@ -1,33 +1,39 @@
-
-/**
- * Write a description of class CourseTest here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import javax.swing.JOptionPane;
 public class CourseTest
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class CourseTest
-     */
+    private String courseName;
+    private int courseGrade;
+    
     public CourseTest()
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+        this.courseName = JOptionPane.showInputDialog("Course Name: ");
+        //this.courseGrade = (Integer.parseInt(JOptionPane.showInputDialog("Grade: ")));
+    }//end constructor
+    
+    public String getCourseName()
     {
-        // put your code here
-        return x + y;
-    }
+        return courseName;
+    }//end getCourseName
+    
+    public void setCourseName ( String newCourseName )
+    {
+        courseName = newCourseName;
+    }//end setCourseName
+    
+    public int getCourseGrade()
+    {
+        return courseGrade;
+    }//end getCourseGrade
+    
+    public void setCourseGrade ( String newCourseGrade )
+    {
+        courseName = newCourseGrade;
+    }//end setCourseGrade
+    
+    public String toString()
+    {
+        String output = "Course Name: " + courseName;
+        return output;
+    }//end toString
+    
 }

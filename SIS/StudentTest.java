@@ -36,18 +36,22 @@ public class StudentTest
     {
         grade = newGrade;
     }//end setGrade
-    
-    
-    //courses
 
+    //courses
     public String getCourses( int i )
     {
         return courses[i];
     }//end getCourses
-    
+
     public void setCourses( int i, String newCourse )
     {
         courses[i] = newCourse;
     }//end setCourses
-    
+
+    public String toString()
+    {
+        String output = "Student Name: " + name + "  " + "Grade: " + grade;
+        return output;
+    }
+
 }//end class

@@ -11,5 +11,5 @@ HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
 
-Add student
-Then, view list
+Shortcut
+for ( Student s : students )
