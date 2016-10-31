@@ -11,7 +11,7 @@ public class AppTest
         int studentInput = 0;
 
         String individualSInput = "1: Add a course \n2: Change the grade";
-        int individualSInput = 0;
+        int individSInput = 0;
 
         StudentTest[] students = new StudentTest[1000];
         CourseTest[] courses = new CourseTest[1000];
@@ -28,7 +28,7 @@ public class AppTest
                     if( students[i] != null )
                     {
                         System.out.println("#" + i + " " + students[i]);
-                        studentOptions = "#" + i + " " + students[i] + "\n";                           
+                        //studentOptions = "#" + i + " " + students[i] + "\n";                           
                     }
                     else
                     {
@@ -36,10 +36,11 @@ public class AppTest
                     }//end if
                 }//end for
                 studentInput = (Integer.parseInt(JOptionPane.showInputDialog(studentOptions)));
+
                 if( studentInput == 1 )
                 {
                     System.out.println(students[0]);
-                    individualSInput = (Integer.parseInt(JOptionPane.showInputDialog("")));
+                    individSInput = (Integer.parseInt(JOptionPane.showInputDialog("")));
                 }
                 //add a course
                 //change gpa
@@ -64,14 +65,18 @@ public class AppTest
             }
             else if ( input == 3 ) //add a student
             {
+
                 for( runtime = 0; runtime < 1; runtime++ )
                 {
                     StudentTest student = new StudentTest();
                     students[i] = student;
                     i++;
+
                 }//end while
+
                 input = (Integer.parseInt(JOptionPane.showInputDialog(options)));
             }
+
             else if ( input == 4 ) //add a course
             {
                 for( runtime = 0; runtime < 1; runtime++ )
@@ -89,4 +94,6 @@ public class AppTest
         }//end while
 
     }//end method
+    
+    
 }//end class

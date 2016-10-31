@@ -4,7 +4,7 @@ public class StudentTest
 
     private String name;
     private int grade;
-    private String[] courses = new String[100];
+    private String[] courses = new String[8];
     private int i;
 
     public StudentTest()

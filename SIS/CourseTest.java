@@ -7,7 +7,6 @@ public class CourseTest
     public CourseTest()
     {
         this.courseName = JOptionPane.showInputDialog("Course Name: ");
-        //this.courseGrade = (Integer.parseInt(JOptionPane.showInputDialog("Grade: ")));
     }//end constructor
     
     public String getCourseName()
