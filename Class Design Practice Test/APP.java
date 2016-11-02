@@ -1,17 +1,11 @@
 
 public class APP
-{
-    
-    
+{       
     public static void main( String[] args )
-    {
+    {             
         Student s1 = new Student("Bob", 12);
-        Student t = Student.getGrades();
-        int i = 0;
-       
-        while ( i < Student.getGrades().length )
-        {
-
-        }//end while
+        s1.getGrades();
+        System.out.println(s1);
+        
     }//end main
 }//end class

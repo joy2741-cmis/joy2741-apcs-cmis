@@ -7,6 +7,7 @@ public class Grade
     
     public Grade()
     {
+        this.course = course;
         this.score = (int)(Math.random()*4);
     }//end constructor
     

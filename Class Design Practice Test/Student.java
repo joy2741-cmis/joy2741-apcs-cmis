@@ -14,6 +14,11 @@ public class Student
 
     public Grade[] getGrades() 
     {
+        for ( int i = 0; i < grades.length; i++ )
+        {
+            grades[i] = new Grade();
+            System.out.println(i + ": " + grades[i]);
+        }        
         return grades;
     }//end getGrade
 
@@ -49,9 +54,13 @@ public class Student
             }//end for
 
         }//end for
-
         return null;
     }//end minMaxGrades
 
+    public String toString()
+    {
+        String output = "Name: " + name + "\nGrade level: " + gradeLevel + "\nGrades: " + grades;
+        return output;
+    }//end toString
     
 }
