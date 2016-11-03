@@ -20,10 +20,17 @@ public class School
         return null;
     }//end getStudentById
 
-    /*
-    public double gpaForCourse( Course course )
+        public double gpaForCourse( Course course )
     {
-
+        //get students in that course
+        for( int i = 0; i < students.length; i++ )//student list
+        {
+            for( int idx = 0; idx < students[i].getGrades().length; idx++ )//courses
+            {
+                students[i].getGrades().getCourse;
+            }//end for
+        }//end for
+        return null;
     }//end gpaForCourse
-     */
+         
 }
