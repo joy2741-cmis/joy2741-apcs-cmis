@@ -1,6 +1,14 @@
 #BlueJ class context
 comment0.params=
-comment0.target=MySong[][]\ getSongList()
-comment1.params=newSongList
-comment1.target=void\ setSongList(MySong)
-numComments=2
+comment0.target=Jukebox()
+comment1.params=
+comment1.target=void\ randomSong()
+comment2.params=rating
+comment2.target=void\ playSongOfRating(int)
+comment3.params=
+comment3.target=MySong[][]\ getSongList()
+comment4.params=newSongList
+comment4.target=void\ setSongList(MySong)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

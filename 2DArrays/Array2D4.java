@@ -33,22 +33,19 @@ public class Array2D4
                 for( int y = 0; y < alphabet[0].length; y++ )
                 {
                     alphabet[x][y] = a;
-                    if ( a > 90 )
+                    if ( a >= 90 )
                     {
                         x = alphabet.length + 1;
                     }//end if
                     else
                     {
                         System.out.print(alphabet[x][y] + " ");
-                        /*
-                         * 
-                         */
                     }//end else
                     a++;
                 }//end inner for
                 System.out.println("\n");
             }//end outer for
-        }
+        }//end if
         else if ( inputCharType == 2 ) //Lowercase
         {
             for ( int x = 0; x < alphabet.length; x++ )
@@ -56,17 +53,16 @@ public class Array2D4
                 a = 97;
                 for( int y = 0; y < alphabet[0].length; y++ )
                 {
+                    alphabet[x][y] = a;
                     if ( a > 122 )
                     {
                         x = alphabet.length + 1;
                     }//end if
                     else
                     {
-                        alphabet[x][y] = a;
                         System.out.print(alphabet[x][y] + " ");
-                        a++;
                     }//end else
-
+                    a++;
                 }//end inner for
                 System.out.println("\n");
             } //end outer for
@@ -76,20 +72,18 @@ public class Array2D4
             a = 48;
             for ( int x = 0; x < alphabet.length; x++ )
             {
-
                 for( int y = 0; y < alphabet[0].length; y++ )
                 {
+                    alphabet[x][y] = a;
                     if ( a > 57 )
                     {
                         x = alphabet.length + 1;
                     }//end if
                     else
                     {
-                        alphabet[x][y] = a;
                         System.out.print(alphabet[x][y] + " ");
-                        a++;
                     }//end else
-
+                    a++;
                 }//end inner for
                 System.out.println("\n");
             } //end outer for

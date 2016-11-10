@@ -11,16 +11,17 @@ public class Array2D3
         {
             for( int y = 0; y < table[0].length; y++ )
             {
-                
                 if ( x == 0 )
                 {
-                    table[x][y] = x;
+                    table[0][y] = y;
+                    System.out.print(table[x][y] + "   ");
                 }
                 else if ( y == 0 )
                 {
-                    table[x][y] = y;
+                    table[x][0] = x;
+                    System.out.print(table[x][y] + "   ");
                 }
-                else if ( table[x][0] > 9 )
+                else if ( table[x][y] > 9 )
                 {
                     table[x][y] = x * y;
                     System.out.print(table[x][y] + "  ");
