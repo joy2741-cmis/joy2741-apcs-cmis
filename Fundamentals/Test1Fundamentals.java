@@ -53,7 +53,7 @@ public class Test1Fundamentals
                 }//end for
                  */
                 System.out.println(runtime+ ": " + "Odd " + array[i]);
-            }//end if 
+            }//end if
 
         }//end for
     }//end method
