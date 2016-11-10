@@ -1,4 +1,6 @@
 #BlueJ class context
-comment0.params=newSongList
-comment0.target=void\ setSongList(MySong)
-numComments=1
+comment0.params=
+comment0.target=MySong[][]\ getSongList()
+comment1.params=newSongList
+comment1.target=void\ setSongList(MySong)
+numComments=2

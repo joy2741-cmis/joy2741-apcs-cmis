@@ -2,15 +2,15 @@
 public class Jukebox
 {
     MySong[][] songList = new MySong[3][4]; 
-    
-    public MySong getSongList()
+
+    public MySong[][] getSongList()
     {
-       return  MySong;
+        return songList;
     }//end getter
-    
+
     public void setSongList( MySong newSongList )
     {
-         MySong[][] songList = new MySong[3][4]; 
+        MySong[][] songList = new MySong[3][4]; 
         songList[0][0] = new MySong( "Jet Airliner", 5 );
         songList[0][1] = new MySong( "Slide", 4 );
         songList[0][2] = new MySong( "Tom Sawyer", 3 );
@@ -24,5 +24,17 @@ public class Jukebox
         songList[2][2] = new MySong( "Beat It", 5 );
         songList[2][3] = new MySong( "Bust a Move", 4 );              
     }//end setter
-    
+
+    public String toString()
+    {
+        for ( int y = 0; y < songList.length; y++ )
+        {
+            for( int x = 0; x < songList[y].length; x++ )
+            {
+                String output = songList[y][x];
+            }//end for x
+        }//end for y
+        return output;
+    }//end toString
+
 }//end class
