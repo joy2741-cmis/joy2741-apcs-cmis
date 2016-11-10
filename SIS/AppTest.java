@@ -87,7 +87,7 @@ public class AppTest
                 }//end while
                 input = (Integer.parseInt(JOptionPane.showInputDialog(options)));
             }
-            else if ( input == 0 ) //quit
+            else if ( input == 0) //quit
             {
 
             }
