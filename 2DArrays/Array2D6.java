@@ -16,39 +16,39 @@ public class Array2D6
 
         int order = 0;
         int index = 0;
+        
+        boolean loop = true;
 
         //Find the start of substring
-        
-        while ( index < 1 )
+
+        String password = JOptionPane.showInputDialog("Create a new password: ");
+        String passwordLowerCase = password.toLowerCase();
+        char[] passwordChar = passwordLowerCase.toCharArray();
+        for( int i = 0; i < passwordChar.length; i++ )
         {
-            String password = JOptionPane.showInputDialog("Create a new password: ");
-            String passwordLowerCase = password.toLowerCase();
-            char[] passwordChar = passwordLowerCase.toCharArray();
-            for( int i = 0; i < passwordChar.length; i++ )
+            if( passwordChar[i] == firstLetter )
             {
-                if( passwordChar[i] == firstLetter )
+                if( passwordChar[i+1] == secondLetter )
                 {
-                    if( passwordChar[i+1] == secondLetter )
+                    //System.out.println(lastNameLowerCase);
+                    //System.out.println(passwordLowerCase);
+                    order = i + 1;
+                    int idx = order - 1;
+                    //System.out.println("Order: " + order);
+                    if ( passwordLowerCase.substring(idx, idx + lastNameChar.length).equals( lastNameLowerCase ))
                     {
-                        //System.out.println(lastNameLowerCase);
-                        //System.out.println(passwordLowerCase);
-                        order = i + 1;
-                        int idx = order - 1;
-                        //System.out.println("Order: " + order);
-                        if ( passwordLowerCase.substring(idx, idx + lastNameChar.length).equals( lastNameLowerCase ))
-                        {
-                            System.out.println("Invalid password");
-                            passwordValid = false;
-                            index = 0;
-                        }//end if
-                        else
-                        {
-                            index = 1;
-                        }//end else
-                    }//end if secondLetter
-                }//end if firstLetter
-            }//end for
-        }//end while
+                        System.out.println("Invalid password");
+                        passwordValid = false;
+                        index = 0;
+                    }//end if
+                    else
+                    {
+                        index = 1;
+                    }//end else
+                }//end if secondLetter
+            }//end if firstLetter
+        }//end for
+
         if ( passwordValid == true )
         {
             System.out.println("Successfully created a password");
