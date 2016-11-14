@@ -14,22 +14,22 @@ public class Array2D3
                 if ( x == 0 )
                 {
                     table[0][y] = y;
-                    System.out.print(table[x][y] + "   ");
+                    System.out.print(table[x][y] + "     ");
                 }
                 else if ( y == 0 )
                 {
                     table[x][0] = x;
-                    System.out.print(table[x][y] + "   ");
+                    System.out.print(table[x][y] + "     ");
                 }
                 else if ( table[x][y] > 9 )
                 {
                     table[x][y] = x * y;
-                    System.out.print(table[x][y] + "  ");
+                    System.out.print(table[x][y] + "   ");
                 }
                 else
                 {
                     table[x][y] = x * y;
-                    System.out.print(table[x][y] + "   ");
+                    System.out.print(table[x][y] + "    ");
                 }
             }//end inner for
             System.out.println("\n");
