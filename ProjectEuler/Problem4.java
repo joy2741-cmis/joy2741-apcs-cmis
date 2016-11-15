@@ -1,45 +1,42 @@
-
+import javax.swing.JOptionPane;
 public class Problem4
 {
     public static void main( String[] args )
     {
-        int product = 0;
-        int[] numbers1 = new int[999];
-        int[] numbers2 = new int[999];
-        int a = 0;
-        int i = 999;
-        int[] result = new int[999];
-        String[] resultS = new String[999];
-        char[] checkNums = new char[5];
+        int input = Integer.parseInt(JOptionPane.showInputDialog("Number: "));
 
-        /*
-        for ( a = 0; a < checkNums.length; a++ )
+        int table[][] = new int[input][input];
+
+        for( int x = 0; x < table.length; x++ )
         {
-        System.out.println("CharArray" + checkNums[a]);
-        }
-         */
-
-        for ( a = 0, i = 999; a < numbers1.length && i > 0; a++, i-- )
-        {
-            numbers1[a] = a + 1;
-            System.out.println( "numbers1[a]: " + numbers1[a] );
-            numbers2[a] = i;
-            System.out.println( "numbers2[a]: " + numbers2[a] );
-
-            if ( a == 500 )
+            for( int y = 0; y < table[0].length; y++ )
             {
-                System.out.println("MAX");
-            }
+                if ( x == 0 )
+                {
+                    table[0][y] = y;
+                    System.out.print(table[x][y] + "   " );
+                }
+                else if ( y == 0 )
+                {
+                    table[x][0] = x;
+                    System.out.print(table[x][y] + "   " );
+                }
+                else if ( table[x][y] > 500 )
+                {
+                    table[x][y] = x * y;
+                    System.out.print(table[x][y] + "   " );
+                }
+                else
+                {
+                    table[x][y] = x * y;
+                    System.out.print(table[x][y] + "   " );
 
-            result[a] = numbers1[a] * numbers2[a]; 
-            resultS[a] = result[a] + " ";
-
-            System.out.println("Result: " + resultS[a] );
-    
-            checkNums = resultS[a].toCharArray();
-
-        }
-
-    }
-}
+                }
+            }//end inner for
+            System.out.println("\n");
+        }//end outer for
+    }//end main
+}//end class
+//in the first row --> print out x
+//in the first column --> print out y
 
