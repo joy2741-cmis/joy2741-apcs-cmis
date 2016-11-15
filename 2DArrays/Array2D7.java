@@ -17,9 +17,9 @@ public class Array2D7
             for( int y = 0; y < gameBoard[0].length; y++ )
             {
                 gameBoard[x][y] = ((int)(Math.random()*99)+1);
-                System.out.print("X   ");
+                //System.out.print("X   ");
                 gameBoard[randomRow][randomColumn] = 0;
-                //System.out.print(gameBoard[x][y] + "   ");
+                System.out.print(gameBoard[x][y] + "   ");
             }//end inner for
             System.out.println("\n");
         }//end outer for                   
