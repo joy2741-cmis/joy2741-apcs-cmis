@@ -71,30 +71,28 @@ public class Test
 
     public int[][] getNineAndFriends(){
         int[][] result = new int[3][3];
+        int pX = nineCoordinates[0];
+        int pY = nineCoordinates[1];
+        int i = 0;
+        int iX = 0;
+        int iY = 0;
         //Modify this method so that it returns the 9 and the 8 digits surrounding it in column major order
-         for ( int y = 0; y < nums.length; y++ ){
-            for ( int x = 0; x < nums.length; x++ ){
-                int num = nums[y][x];
-                if( x == (nineCoordinates[0] - 1) && y > (nineCoordinates[0] + 3))//Y left
-                {
-                    System.out.println("Y-: " + nums[y][x] + "  ");
-                }
-                else if( x == (nineCoordinates[0] + 1) )
-                {
-                    System.out.println("Y+: " + nums[y][x] + "  ");
-                }
-                else if( y == (nineCoordinates[0] - 1) )
-                {
-                    System.out.println("X-: " + nums[y][x] + "  ");
-                }
-                else if( y == (nineCoordinates[0] + 1) )
-                {
-                    System.out.println("Y-: " + nums[y][x] + "  ");
-                }
-                //System.out.print(nums[y][x] + "  ");
+        /*
+        for ( int y = pY - 1; y < pY + 2; y++ ){
+        for ( int x = pX - 1; x < pX + 2; x++ ){
+        System.out.print(nums[x][y] + "  ");
+        }
+        System.out.println();
+        }  
+         */
+        for ( int y = pX - 1; y < pX + 2; y++ ){
+            for ( int x = pY - 1; x < pY + 2; x++ ){
+                int number = nums[x][y];
+                //result[y][x] = nums[x][y];
+                //System.out.print(result[y][x] + "  ");
             }
             System.out.println();
-        }  
+        } 
         return result;
     }
 
