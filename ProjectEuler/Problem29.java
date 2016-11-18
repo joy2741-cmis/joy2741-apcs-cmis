@@ -3,7 +3,31 @@ public class Problem29
 {
     public static void main( String[] args )
     {
-        
+        int[][] nums = new int[6][6]; //length + 2 b/c x = 2
+        int terms = 0;
+
+        for( int x = 2; x < nums.length; x++ )
+        {
+            for( int y = 2; y < nums[x].length; y++ )
+            {
+                nums[x][y] = (int)(Math.pow(x,y));
+                System.out.print(nums[x][y] + " (" + x + ", " + y + ")   ");
+                terms++;
+            }//end for y
+            System.out.println("\n");
+        }//end for x
+
+        System.out.println("Distinct terms: " + terms);
+
+        for( int x = 2; x < nums.length; x++ )
+        {
+            for( int y = 2; y < nums.length; y++ )
+            {
+                System.out.print(nums[x][y] + " (" + x + ", " + y + ")   "); 
+            }//end for y
+            System.out.println("\n");
+        }//end for x
+
     }//end method
 }
 
