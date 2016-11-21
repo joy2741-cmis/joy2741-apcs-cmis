@@ -8,6 +8,8 @@ public class Test
     public Test(int d){
         nums = new int[d][d];
         this.nums = nums;
+        
+        //1pt --- loops over very item in 2d array
         for( int y = 0; y < nums.length; y++ )
         {
             for( int x = 0; x < nums[0].length; x++ )
@@ -21,6 +23,7 @@ public class Test
                         //not on the edge
                         if( x == 0 )
                         {
+                            //1pt ---- sets item to correct possible value
                             nums[y][x] = (int)((Math.random()*9)-1);
                         }//end edge x
                         else if ( y == 0 )
@@ -34,8 +37,10 @@ public class Test
                             runtime++;
                         }
                     }//end if runtime = 0
+                     // 1pt ------ sets 9 in correct possible range (not in first or last row or column)
                     else if( runtime == 1 )
                     {
+                        // 1pt ------ sets exactly 1 random item to 9
                         nums[y][x] = (int)(Math.random()*9);
                     }//end if runtime = 1
                 }//end if number = 9
@@ -77,14 +82,14 @@ public class Test
         int iX = 0;
         int iY = 0;
         //Modify this method so that it returns the 9 and the 8 digits surrounding it in column major order
-        /*
+
         for ( int y = pY - 1; y < pY + 2; y++ ){
-        for ( int x = pX - 1; x < pX + 2; x++ ){
-        System.out.print(nums[x][y] + "  ");
-        }
-        System.out.println();
+            for ( int x = pX - 1; x < pX + 2; x++ ){
+                System.out.print(nums[x][y] + "  ");
+            }
+            System.out.println();
         }  
-         */
+
         for ( int y = pX - 1; y < pX + 2; y++ ){
             for ( int x = pY - 1; x < pY + 2; x++ ){
                 int number = nums[x][y];
