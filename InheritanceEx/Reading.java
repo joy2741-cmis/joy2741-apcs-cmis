@@ -4,6 +4,7 @@ public class Reading extends Activity
     private boolean book; //true --> there is a book 
     private int page;
     private String genre;
+    private String output;
 
     public Reading( String name, int x, int y, boolean book, int page, String genre )
     {
@@ -15,7 +16,6 @@ public class Reading extends Activity
 
     public String bookStr()
     {
-        String output = "";
         if( book = true )
         {
             output = "have";
@@ -24,9 +24,8 @@ public class Reading extends Activity
         {
             output = "do not have";
         }
-
-        return output; 
-    }//end bookStr()
+        return output;
+       }//end bookStr()
 
     public boolean getBook()
     {
@@ -62,12 +61,12 @@ public class Reading extends Activity
     {
         super.setName(newName);
     }//end setName
-       
+
     public void setX( int newX )
     {
         super.setX(newX);
     }//end setX
-    
+
     public void setY( int newY )
     {
         super.setY(newY);
@@ -75,7 +74,7 @@ public class Reading extends Activity
 
     public String toString()
     {
-        return String.format("I " + " a book. There are" + " pages.");
+        return String.format("I " + bookStr() + " a book. There are " + page + " pages. The genre is " + genre + ".");
     }//end toString
 
 }//end class

@@ -1,20 +1,43 @@
 
 public class Soccer extends Activity
 {
-    boolean ball;
-    int player;
-    String teamAName;
-    String teamBName;
+    private boolean ball;
+    private int player;
+    private String output;
 
-    public Soccer( String name, int x, int y, int player, String teamAName, String teamBName )
+    public Soccer( String name, int x, int y, boolean ball, int player )
     {
         super(name, x, y);
+        this.ball = ball;
         this.player = player;
-        this.teamAName = teamAName;
-        this.teamBName = teamBName;
     }//end constructor
     
-    
+    public String ballStr()
+    {
+        if( ball = true )
+        {
+            output = "is";
+        }
+        else
+        {
+            output = "isn't";
+        }
+        return output;
+       }//end bookStr()
 
-    
+    public boolean getBall()
+    {
+        return ball;
+    }//end getBall
+
+    public int getPlayer()
+    {
+        return player;
+    }//end getPlayer
+
+    public String toString()
+    {
+        return String.format("There " + ballStr() + " a ball. There are " + player + " player(s).");
+    }//end toString
+
 }//end class
