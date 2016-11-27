@@ -1,10 +1,10 @@
 #BlueJ class context
-comment0.params=name\ x\ y\ ball\ player
-comment0.target=Soccer(java.lang.String,\ int,\ int,\ boolean,\ int)
+comment0.params=x\ y
+comment0.target=Soccer(int,\ int)
 comment1.params=
-comment1.target=java.lang.String\ ballStr()
+comment1.target=boolean\ getBall()
 comment2.params=
-comment2.target=boolean\ getBall()
+comment2.target=java.lang.String\ ballStr()
 comment3.params=
 comment3.target=int\ getPlayer()
 comment4.params=

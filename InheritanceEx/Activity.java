@@ -5,9 +5,8 @@ public class Activity
     private int x;
     private int y;
 
-    public Activity( String name, int x, int y )
+    public Activity( int x, int y )
     {
-        this.name = name; 
         this.x = x;
         this.y = y;
     }//end constructor
@@ -44,7 +43,7 @@ public class Activity
 
     public String toString()
     {
-        return String.format("Name: " + name + " X: " + x + " Y: " + y);
+        return String.format(" X: %d  Y: %d || ", getX(), getY());
     }//end toString
 
 }//end class

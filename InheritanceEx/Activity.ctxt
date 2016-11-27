@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=name\ x\ y
-comment0.target=Activity(java.lang.String,\ int,\ int)
+comment0.params=x\ y
+comment0.target=Activity(int,\ int)
 comment1.params=
 comment1.target=java.lang.String\ getName()
 comment2.params=newName

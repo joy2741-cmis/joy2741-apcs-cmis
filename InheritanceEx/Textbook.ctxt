@@ -1,8 +1,14 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Textbook()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Textbook\n
-comment1.params=y
-comment1.target=int\ sampleMethod(int)
-comment1.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
-numComments=2
+comment0.params=x\ y\ book\ page\ homework
+comment0.target=Textbook(int,\ int,\ boolean,\ int,\ boolean)
+comment1.params=
+comment1.target=java.lang.String\ textbookStr()
+comment2.params=
+comment2.target=boolean\ getHomework()
+comment3.params=newHomework
+comment3.target=void\ setHomework(boolean)
+comment4.params=
+comment4.target=java.lang.String\ getCourse()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

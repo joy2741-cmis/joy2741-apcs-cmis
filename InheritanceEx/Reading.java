@@ -3,15 +3,12 @@ public class Reading extends Activity
 {
     private boolean book; //true --> there is a book 
     private int page;
-    private String genre;
     private String output;
 
-    public Reading( String name, int x, int y, boolean book, int page, String genre )
+    public Reading( int x, int y, boolean book )
     {
-        super(name, x, y); 
+        super( x, y ); 
         this.book = book;
-        this.page = page;
-        this.genre = genre;
     }//end constructor
 
     public String bookStr()
@@ -26,6 +23,11 @@ public class Reading extends Activity
         }
         return output;
        }//end bookStr()
+       
+    public String getName()
+    {
+        return super.getName();
+    }//end getName
 
     public boolean getBook()
     {
@@ -39,6 +41,7 @@ public class Reading extends Activity
 
     public int getPage()
     {
+        page = (int)(Math.random()*500)+1;
         return page;
     }//end getPage
 
@@ -46,16 +49,6 @@ public class Reading extends Activity
     {
         page = newPage;
     }//end setPage
-
-    public String getGenre()
-    {
-        return genre;
-    }//end getGenre
-
-    public void setGenre( String newGenre )
-    {
-        genre = newGenre;
-    }//end setGenre
 
     public void setName( String newName )
     {
@@ -74,7 +67,7 @@ public class Reading extends Activity
 
     public String toString()
     {
-        return String.format("I " + bookStr() + " a book. There are " + page + " pages. The genre is " + genre + ".");
+        return String.format("%s I  %s  a book. There are %d pages.", super.toString(),bookStr(), getPage());
     }//end toString
 
 }//end class

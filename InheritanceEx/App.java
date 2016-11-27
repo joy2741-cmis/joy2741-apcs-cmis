@@ -7,14 +7,18 @@ public class App
         
         for( int i = 0; i < activities.length; i++ )
         {
-            int random = (int)(Math.random()*2)+1;
-            if( random % 2 == 0 )
+            int random = (int)(Math.random()*3);
+            if( random == 0 )
             {
-                activities[i] = new Reading( "name", 5, 6, true, 78, "fantasy" );
+                activities[i] = new Reading( 5, 6, true );
             }//end if
-            else
+            else if( random == 1 )
             {
-                activities[i] = new Soccer( "A", 8, 6, true, 11 );
+                activities[i] = new Soccer( 8, 6 );
+            }
+            else if( random == 2 )            
+            {
+                activities[i] = new Textbook( 7, 3, true, 700, true );
             }//end else
             System.out.println(activities[i]);
         }//end for
