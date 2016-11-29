@@ -1,33 +1,113 @@
 
-/**
- * Write a description of class MyDevices here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MyDevice
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private double price;
+    private boolean portable; 
+    private boolean battery;
+    private String output;
+   
+    public MyDevice( boolean portable, boolean battery, double price )
+    {
+        this.portable = portable;
+        this.battery = battery;
+        this.price = price;
+    }//end constructor
 
-    /**
-     * Constructor for objects of class MyDevices
-     */
+    public MyDevice( boolean portable, double price )
+    {
+        this.portable = portable;
+        if( portable = true )
+        {
+            this.battery = true;
+        }
+        else if( portable = false )
+        {
+            this.battery = false;
+        }//end if-else
+        this.price = price;
+    }//end constructor 2
+
     public MyDevice()
     {
-        // initialise instance variables
-        x = 0;
-    }
+        int num = (int)(Math.random()*2)+1;
+        if( num == 1 )
+        {
+            this.portable = true;
+            this.battery = true;
+        }
+        else if( num == 2 )  
+        {
+            this.portable = false;
+            this.battery = false;
+        }//end if-else
+        this.price  = (Math.random()*5000)+10000;
+    }//end constructor 3
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    //Methods
+
+    public String portableStr()
     {
-        // put your code here
-        return x + y;
-    }
-}
+        //String output = "";
+        if( portable = true )
+        {
+            output = "is";
+        }
+        else
+        {
+            output = "is not";
+        }//end if-else
+        return output;
+    }//end portableStr()
+    
+     public String batteryStr()
+    {
+       // String output = "";
+        if( battery = true )
+        {
+            output = "uses";
+        }
+        else     
+        {
+            output = "does not use";
+        }//end if-else
+        return output;
+    }//end batteryStr()
+
+    //getter-setter
+
+    public boolean getPortable()
+    {
+        return portable;
+    }//end getPortable
+
+    public void setPortable( boolean newPortable )
+    {
+        portable = newPortable;
+    }//end setPortable
+
+    public boolean getBattery()
+    {
+        return battery;
+    }//end getBattery
+
+    public void setBattery( boolean newBattery )
+    {
+        battery = newBattery;
+    }//end setBattery
+
+    public double getPrice()
+    {
+        return price;
+    }//end getProce
+
+    public void setPrice( double newPrice )
+    {
+        price = newPrice;
+    }//end setPrice
+
+    public String toString()
+    {
+        return String.format("The device %s portable. It %s battery. The price is %f ", portableStr(), batteryStr(), price );
+    }//end toString
+
+}//end class MyDevice
