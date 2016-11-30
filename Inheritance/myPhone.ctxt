@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=myPhone()
 comment1.params=
-comment1.target=double\ size()
+comment1.target=double\ volume()
 comment2.params=
 comment2.target=java.lang.String\ toString()
 numComments=3

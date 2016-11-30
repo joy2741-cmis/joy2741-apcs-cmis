@@ -16,11 +16,11 @@ public class MyDevice
     public MyDevice( boolean portable, double price )
     {
         this.portable = portable;
-        if( portable = true )
+        if( portable == true )
         {
             this.battery = true;
         }
-        else if( portable = false )
+        else if( portable == false )
         {
             this.battery = false;
         }//end if-else
@@ -48,7 +48,7 @@ public class MyDevice
     public String portableStr()
     {
         //String output = "";
-        if( portable = true )
+        if( portable == true )
         {
             output = "is";
         }
@@ -62,7 +62,7 @@ public class MyDevice
      public String batteryStr()
     {
        // String output = "";
-        if( battery = true )
+        if( battery == true )
         {
             output = "uses";
         }
