@@ -1,33 +1,31 @@
 
-/**
- * Write a description of class FriedEggMan here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class FriedEggMan extends SuperHero
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class FriedEggMan
-     */
+     String[] colors = {"red", "blue", "green", "pink", "black", "purple"};
+    
     public FriedEggMan()
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+        super();
+        int randomColor = (int)(Math.random()*colors.length);
+        super.setSuitColor(colors[randomColor]);
+        int randomCape = (int)(Math.random()*1);
+        if( randomCape == 0 )
+        {
+            super.setCape(true);
+        }
+        else
+        {
+            super.setCape(false);
+        }//end if-else        
+    }//end zero-arg constructor
+    
+    public String motto()
     {
-        // put your code here
-        return x + y;
-    }
-}
+        return "The yolk is always watching you";
+    }//end method motto
+    
+    public String toString()
+    {
+        return String.format("%-15s %-11s %-11s %-9s \n", getClass().getName(), super.isCaped(), super.getSuitColor(), motto());
+    }//end toString
+}//end class FriedEggMan

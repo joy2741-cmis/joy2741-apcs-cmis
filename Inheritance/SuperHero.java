@@ -30,6 +30,6 @@ public abstract class SuperHero
     } // end method isCaped
 
     public abstract String motto();  
-
+   
 } // end abstract class SuperHero
 

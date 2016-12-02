@@ -1,9 +1,9 @@
 
-public class AsteroidMan extends SuperHero
+public class SilentMan extends SuperHero
 {
     String[] colors = {"red", "blue", "green", "pink", "black", "purple"};
-
-    public AsteroidMan()
+    
+    public SilentMan()
     {
         super();
         int randomColor = (int)(Math.random()*colors.length);
@@ -18,14 +18,14 @@ public class AsteroidMan extends SuperHero
             super.setCape(false);
         }//end if-else        
     }//end zero-arg constructor
-
+    
     public String motto()
     {
-        return "Things will get a bit rocky!";
+        return "...";
     }//end method motto
-
+    
     public String toString()
     {
         return String.format("%-15s %-11s %-11s %-9s \n", getClass().getName(), super.isCaped(), super.getSuitColor(), motto());
     }//end toString
-}//end class AsteroidMan
+}//end class SilentMan
