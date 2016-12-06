@@ -8,15 +8,15 @@ public class AsteroidMan extends SuperHero
         super();
         int randomColor = (int)(Math.random()*colors.length);
         super.setSuitColor(colors[randomColor]);
-        int randomCape = (int)(Math.random()*1);
-        if( randomCape == 0 )
+        int randomCape = (int)(Math.random()*10)+1;
+        if( randomCape % 2 == 0 )
         {
             super.setCape(true);
         }
         else
         {
             super.setCape(false);
-        }//end if-else        
+        }//end if-else          
     }//end zero-arg constructor
 
     public String motto()
