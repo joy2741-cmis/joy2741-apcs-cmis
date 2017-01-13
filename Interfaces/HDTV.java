@@ -1,33 +1,18 @@
 
-/**
- * Write a description of class HDTV here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class HDTV extends TV
+public class HDTV extends TV implements Digital
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class HDTV
-     */
     public HDTV()
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+        super();
+    }//end constructor
+    
+    public String connectHDMI()
     {
-        // put your code here
-        return x + y;
-    }
-}
+        return "HDMI cable connected.";
+    }//end connectHDMI
+    
+    public String tvType()
+    {
+        return "I'm a High Def 24 million color TV.";
+    }//end tvType
+}//end HDTV

@@ -1,33 +1,20 @@
 
-/**
- * Write a description of class BWTV here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class BWTV extends TV
+public class BWTV extends TV implements Analog
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class BWTV
-     */
+    
     public BWTV()
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+        super();
+    }//end constructor
+    
+    public String rotateRabbitEars()
     {
-        // put your code here
-        return x + y;
-    }
-}
+        return "Rabbit ears rotated 45 degrees.";
+    }//end rotateRabbitEars
+    
+    public String tvType()
+    {
+        return "I'm a black and white TV.";
+    }//end tvType()
+
+}//end BWTV
