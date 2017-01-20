@@ -8,58 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyA extends Actor
 {
-    /**
-     * Act - do whatever the EnemyA wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    public void act()
     {
-        move();
         turn();
         checkEdge();
     }//end act
-    
-    public void move()
-    {
-        if( Greenfoot.getRandomNumber(100) % 2 == 0 )
-        {
-            move(50);
-        }
-        else if( Greenfoot.getRandomNumber(100) % 3 == 0 )
-        {
-            move(100);
-        }
-        else if( Greenfoot.getRandomNumber(100) % 5 == 0 )
-        {
-            move(75);
-        }
-        else 
-        {
-            move(120);
-        }
-    }//end move
 
     public void turn()
     {
-        move();
-        if( Greenfoot.getRandomNumber(100) % 2 == 0 )
+        if( Greenfoot.getRandomNumber(4) == 0 )
         {
-            setRotation(-90);
+            setLocation(getX(), getY()-30); //up
         }
-        else if( Greenfoot.getRandomNumber(100) % 3 == 0 )
+        else if( Greenfoot.getRandomNumber(4) == 1 )
         {
-            setRotation(90);
+            setLocation(getX(), getY()+30); //down
         }
-        else if( Greenfoot.getRandomNumber(100) % 5 == 0 )
+        else if( Greenfoot.getRandomNumber(4) == 2 )
         {
-            setRotation(-180);
+            setLocation(getX()-30, getY()); //left           
         }
-        else 
+        else if( Greenfoot.getRandomNumber(4) == 3 )
         {
-            setRotation(180);
-        }
+            setLocation(getX()+30, getY()); //right
+        }//end if
     }//end move
-
     public void checkEdge()
     {
         if( isAtEdge() == true )
@@ -67,13 +40,37 @@ public class EnemyA extends Actor
             move(200);
             if( Greenfoot.getRandomNumber(100) % 2 == 0 )
             {
-                turn();
+                turn(90);
             }
             else
             {
-                turn();
+                turn(-90);
             }//end if
         }//end if
-    }//end checkEdge
 
-}
+        /*
+        public void checkEdge()
+        {
+        if( getX() == 0 ) //leftX
+        {
+        setLocation(getX()+1, getY());
+        move(50);
+        }
+        else if( getX() == 400 ) //rightX
+        {
+        setLocation(getX()-1, getY());
+        move(50);
+        }//end if horixontal
+        else if( getY() == 0 ) //up
+        {
+        setLocation(getX(), getY()+1);
+        move(50);
+        }
+        else if( getY() == -600 ) //down
+        {
+        setLocation(getX(), getY()-1);
+        move(50);
+        }//end if vertical
+         */
+    }//end checkEdge
+}//end class

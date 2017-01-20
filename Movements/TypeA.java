@@ -14,24 +14,40 @@ public class TypeA extends Actor
     public void act() 
     {
         turnLeft();
-        turnRight();     
+        turnRight();
+        up();
+        down();
     }  
+
+    public void up()
+    {
+        if( Greenfoot.isKeyDown("up") )
+        {
+            setLocation(getX(), getY()-1);
+        }//end if
+    }//end up
+
+    public void down()
+    { 
+        if( Greenfoot.isKeyDown("down") )
+        {
+            setLocation(getX(),getY()+1);
+        }//end if
+    }//end down
 
     public void turnLeft()
     {
-        move(3);
         if( Greenfoot.isKeyDown("left") )
         {
-            turn(-90);
+            setLocation(getX()-1,getY());
         }//end if
     }//end turnLeft
 
     public void turnRight()
     {
-        move(3);
         if( Greenfoot.isKeyDown("right") )
         {
-            turn(-90);
+            setLocation(getX()+1,getY());
         }//end if
     }//end turnRight
 
