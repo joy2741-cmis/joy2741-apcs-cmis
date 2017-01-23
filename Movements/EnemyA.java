@@ -8,6 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyA extends Actor
 {
+    Actor target;
+    
+    public EnemyA( Actor target )
+    {
+        this.target = target;
+    }//end EnemyA
+
     public void act()
     {
         turn();
@@ -33,6 +40,7 @@ public class EnemyA extends Actor
             setLocation(getX()+30, getY()); //right
         }//end if
     }//end move
+
     public void checkEdge()
     {
         if( isAtEdge() == true )
@@ -47,30 +55,5 @@ public class EnemyA extends Actor
                 turn(-90);
             }//end if
         }//end if
-
-        /*
-        public void checkEdge()
-        {
-        if( getX() == 0 ) //leftX
-        {
-        setLocation(getX()+1, getY());
-        move(50);
-        }
-        else if( getX() == 400 ) //rightX
-        {
-        setLocation(getX()-1, getY());
-        move(50);
-        }//end if horixontal
-        else if( getY() == 0 ) //up
-        {
-        setLocation(getX(), getY()+1);
-        move(50);
-        }
-        else if( getY() == -600 ) //down
-        {
-        setLocation(getX(), getY()-1);
-        move(50);
-        }//end if vertical
-         */
     }//end checkEdge
 }//end class

@@ -15,46 +15,38 @@ public class EnemyB extends Actor
     public void act() 
     {
         turn();
-        checkEdge();
+        //checkEdge();
     }//end act
 
     public void turn()
-    {
+    {        
+        move(3);
         if( Greenfoot.getRandomNumber(4) == 0 )
         {
-            setRotation(-5);
+            turn(-15);
         }
+
         else if ( Greenfoot.getRandomNumber(4) == 1 )
         {
-            setRotation(5);
-        }  
-        /*
-        else if ( Greenfoot.getRandomNumber(4) == 2 )
-        {
-        setRotation(-135);
-        }
-        else
-        {
-        setRotation(135);
-        }
-         */
-        move(10);
+            turn(15);
+        }                  
     }//end move
-
+    /*
     public void checkEdge()
     {
         if( isAtEdge() == true )
         {
-            if( Greenfoot.getRandomNumber(100) % 2 == 0 )
+            if( Greenfoot.getRandomNumber(2) == 0 )
             {
-                turn(180);
+                setLocation(getX()+20, getY()+20);
             }
             else
             {
-                turn(-180);
+                setLocation(getX()-20, getY()-20);
             }//end if
-            move(50);
         }//end if
     }//end checkEdge
+    */
 
 }
+
