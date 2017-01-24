@@ -25,9 +25,9 @@ public class MyWorld extends World
         addObject(typeA,400,200);
         TypeB typeB = new TypeB();
         addObject(typeB,300,100);
-        EnemyA enemyA = new EnemyA( typeA );
-        addObject(enemyA,100,150);
         EnemyB enemyB = new EnemyB();
         addObject(enemyB,200,300);
+        EnemyA enemyA = new EnemyA( enemyB );
+        addObject(enemyA,100,150);        
     }//end prepare()
 }//end class

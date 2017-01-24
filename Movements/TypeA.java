@@ -18,7 +18,7 @@ public class TypeA extends Actor
         up();
         down();
     }  
-    
+
     public void up()
     {
         if( Greenfoot.isKeyDown("up") )

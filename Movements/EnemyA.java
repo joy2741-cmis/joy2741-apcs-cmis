@@ -17,9 +17,17 @@ public class EnemyA extends Actor
 
     public void act()
     {
-        turn();
-        checkEdge();
+        follow();
     }//end act
+    
+    public void follow()
+    {
+        int x = target.getX();
+        int y = target.getY();
+        
+        turnTowards(x,y);
+        move(2);
+    }//end follow
 
     public void turn()
     {
