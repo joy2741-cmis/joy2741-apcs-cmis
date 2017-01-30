@@ -19,27 +19,21 @@ public class MyWorld extends World
         super(600, 400, 1); 
         prepare();
     }
-
-    private void prepare()
+    
+    public void prepare()
     {
-
         Ball a = new Ball();
-        addObject(a,410,200);
+        addObject(a,400,200);
+        Ball b = new Ball(a);
+        addObject(b,a.getX()-20,a.getY());
+        Ball c = new Ball(b);
+        addObject(c,b.getX()-20,a.getY());
+        Ball d = new Ball(c);
+        addObject(d,c.getX()-20,a.getY());
+        Ball e = new Ball(d);
+        addObject(e,d.getX()-20,a.getY());
+        Ball f = new Ball(e);
+        addObject(f,e.getX()-20,e.getY());
+    }//end prepare
 
-        Ball b = new Ball();
-        addObject(b,a.getX()-22,a.getY());
-
-        Ball c = new Ball();
-        addObject(c,b.getX()-22,b.getY());
-
-        Ball d = new Ball();
-        addObject(d,c.getX()-22,c.getY());
-
-        Ball e = new Ball();
-        addObject(e,d.getX()-22,d.getY());
-
-        Ball f = new Ball();
-        addObject(f,e.getX()-22,e.getY());
-
-    }
 }

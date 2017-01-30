@@ -14,33 +14,71 @@ public class Ball extends Actor
      */
 
     Actor target;
+    boolean leader;
 
     public Ball()//leader
     {
-
+        leader = true;
     }//end constructor
-    
+
     public Ball( Actor target )//follower
     {
         this.target = target;
+        leader = false;
     }//end constructor
 
     public void act() 
     {
-        // Add your action code here.
+        if( leader == true )
+        {
+            moveRandomly();
+            checkEdge();
+        }
+        else
+        {
+            follow();
+            checkEdge();
+        }//end if-else
     }    
-    
-    public void move()
+
+    public void moveRandomly()
     {
-       move(5); 
+        move(3);
+        if( Greenfoot.getRandomNumber(2) == 0 )
+        {
+            turn(45);
+        }
+        else 
+        {
+            turn(-45);
+        }//end if-else
     }//end move
 
-    public void isTouching()
+    public void checkEdge()
     {
-        if( Greenfoot.isTouching(Greenfoot.target) == true )
+        move(3);
+        if( getX() > 590 )
         {
-            move(5);
+            turn(-45);
+        }
+        else if( getX() < 10 )
+        {
+            turn(45);
+        }
+        else if( getY() < 10 )
+        {
+            turn(-45);
+        }
+        else if( getY() > 390 )
+        {
+            turn(45);
         }//end if
-    }//end leader
+    }//end checkEdge
+
+    public void follow()
+    {
+        turnTowards( target.getX(), target.getY() );
+        move(1);
+    }//end follow
 
 }
