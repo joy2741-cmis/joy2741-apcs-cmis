@@ -9,17 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
     }
-    
+
     public void prepare()
     {
         Ball a = new Ball();
@@ -34,6 +30,14 @@ public class MyWorld extends World
         addObject(e,d.getX()-40,a.getY());
         Ball f = new Ball(e);
         addObject(f,e.getX()-40,e.getY());
+        Bread generator = new Bread();
+        addObject(generator, 120,350);
     }//end prepare
 
-}
+    public void generateAnts()
+    {
+        Ant a = new Ant();
+        addObject(a, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400));
+    }//end generateAnts
+
+    }

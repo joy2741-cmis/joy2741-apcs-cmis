@@ -1,18 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Ball here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Ball extends Actor
 {
-    /**
-     * Act - do whatever the Ball wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-
     Actor target;
     boolean leader;
 
@@ -37,13 +26,13 @@ public class Ball extends Actor
         else
         {
             follow();
-            checkOverlap();
+            //checkOverlap();
         }//end if-else
-    }    
+    }//end act
 
     public void moveRandomly()
     {
-        move(3);
+        move(1);
         if( Greenfoot.getRandomNumber(2) == 0 )
         {
             turn(45);
@@ -56,7 +45,7 @@ public class Ball extends Actor
 
     public void checkEdge()
     {
-        move(3);
+        move(4);
         if( getX() > 590 )
         {
             turn(-45);
@@ -78,12 +67,19 @@ public class Ball extends Actor
     public void follow()
     {
         turnTowards( target.getX(), target.getY() );
-        move(3);
+        if( target.getX() - getX() > 30 || target.getY() - getY() > 30 )
+        {
+            move(4);
+        }
+        else if( getY() - target.getY() > 30 || getX() - target.getX() > 30 )
+        {
+            move(4);
+        }//end if else
     }//end follow
-    
+
     public void checkOverlap()
     {
-        if( intersects( target ) )
+        if( intersects( target ) == true)
         {
             turn(-180);
             move(2);
