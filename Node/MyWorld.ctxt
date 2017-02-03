@@ -11,5 +11,5 @@ comment4.target=void\ addNode()
 comment5.params=
 comment5.target=void\ removeNode()
 comment6.params=
-comment6.target=void\ removeLastNode()
+comment6.target=void\ removeFirstNode()
 numComments=7

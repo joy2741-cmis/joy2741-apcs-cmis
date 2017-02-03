@@ -33,7 +33,7 @@ public class MyWorld extends World
             }
 
             if( key.equals("l")){
-                removeLastNode();
+                removeFirstNode();
             }
         }
     }
@@ -68,7 +68,7 @@ public class MyWorld extends World
         }
     }
 
-    public void removeLastNode(){
+    public void removeFirstNode(){
         if ( first != null ){
             removeObject(first);
             nodes.remove(node);
@@ -78,8 +78,11 @@ public class MyWorld extends World
             Node node = nodes.get(i);
             if( node != null )
             {
-                node = first;
-                i = nodes.size() +1;
+                if( node.isLeader() == true)
+                {
+                    node = first;
+                    i = nodes.size() +1;
+                }
             }
         }//end for
     }
