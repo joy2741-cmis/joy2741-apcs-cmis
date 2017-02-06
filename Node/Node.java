@@ -34,7 +34,7 @@ public class Node extends Actor
         moveFollower();
         adjustSpeed();  
         if( Math.random() > 0.5 ){
-            changeColor();
+            //changeColor();
         }
     }
     
@@ -46,7 +46,7 @@ public class Node extends Actor
         return target;
     }
     
-    private void moveLeader(){
+    public void moveLeader(){
         if ( isLeader() ){
             if ( Math.random() > changeDirProb ){
                 dir = -1 + Greenfoot.getRandomNumber(3);
@@ -58,7 +58,7 @@ public class Node extends Actor
             }    
         }
     }
-    
+        
     private void moveFollower(){
         if ( !isLeader() && shouldMove() ){
             turnTowards(target.getX(), target.getY());

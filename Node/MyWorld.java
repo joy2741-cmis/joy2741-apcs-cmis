@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class MyWorld extends World
 {
-    private Node node, first, last;
+    private Node node, first,second,last;
     ArrayList<Node> nodes = new ArrayList<Node>();
     public MyWorld()
     {
@@ -18,7 +18,6 @@ public class MyWorld extends World
             last = node;
             nodes.add(node);
         }
-
     }
 
     public void act(){
@@ -32,7 +31,7 @@ public class MyWorld extends World
                 removeNode();
             }
 
-            if( key.equals("l")){
+            if( key.equals("f")){
                 removeFirstNode();
             }
         }
@@ -49,12 +48,21 @@ public class MyWorld extends World
     }
 
     public void addNode(){
-        node = new Node(last);
         if(first == null){
             first = node;
+            node = new Node(null);
+        }
+        else if(first == last)
+        {
+            node = new Node(first);
+            last = node;            
+        }
+        else
+        {
+            node = new Node(last);
+            node = last;
         }
         int[] loc = getNewLocation();
-        last = node;
         addObject(node, loc[0], loc[1]);
         nodes.add(node);
     }
@@ -71,20 +79,21 @@ public class MyWorld extends World
     public void removeFirstNode(){
         if ( first != null ){
             removeObject(first);
-            nodes.remove(node);
-        }
-        for( int i = 0; i < nodes.size(); i++ )
-        {
-            Node node = nodes.get(i);
-            if( node != null )
+            nodes.remove(first);            
+            first = nodes.get(0); 
+            first.setTarget(null);
+            if( nodes.size() > 1 )
             {
-                if( node.isLeader() == true)
+                second = nodes.get(1);
+                second.setTarget(first);
+                if( nodes.get(2) == null )
                 {
-                    node = first;
-                    i = nodes.size() +1;
+                    second = last;
                 }
             }
-        }//end for
-    }
 
+        }
+
+    }
 }
+
