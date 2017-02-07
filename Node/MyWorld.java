@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class MyWorld extends World
 {
-    private Node node, first,second,last;
+    private Node node,first,second,last;
     ArrayList<Node> nodes = new ArrayList<Node>();
     public MyWorld()
     {
@@ -31,7 +31,7 @@ public class MyWorld extends World
                 removeNode();
             }
 
-            if( key.equals("f")){
+            if( key.equals("f") ){
                 removeFirstNode();
             }
         }
@@ -47,23 +47,15 @@ public class MyWorld extends World
         return location;
     }
 
-    public void addNode(){
+    public void addNode(){        
         if(first == null){
             first = node;
             node = new Node(null);
         }
-        else if(first == last)
-        {
-            node = new Node(first);
-            last = node;            
-        }
-        else
-        {
-            node = new Node(last);
-            node = last;
-        }
+        node = new Node(last);
         int[] loc = getNewLocation();
         addObject(node, loc[0], loc[1]);
+        last = node;
         nodes.add(node);
     }
 
@@ -77,12 +69,16 @@ public class MyWorld extends World
     }
 
     public void removeFirstNode(){
-        if ( first != null ){
+        if ( first != null && nodes.size() > 0 )
+        {
             removeObject(first);
-            nodes.remove(first);            
-            first = nodes.get(0); 
-            first.setTarget(null);
-            if( nodes.size() > 1 )
+            nodes.remove(first); 
+            if( nodes.size() > 0 )
+            {
+                first = nodes.get(0); 
+                first.setTarget(null);
+            }   
+            if( nodes.size() > 2 )
             {
                 second = nodes.get(1);
                 second.setTarget(first);
@@ -90,10 +86,10 @@ public class MyWorld extends World
                 {
                     second = last;
                 }
-            }
 
+            }                     
+            System.out.println(nodes.size());
         }
-
     }
 }
 
