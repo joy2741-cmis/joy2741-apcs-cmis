@@ -1,0 +1,15 @@
+#Greenfoot properties
+#Wed Jan 25 07:55:24 ICT 2017
+class.ObjectB.image=stawberry.png
+class.MyWorld.image=space1.jpg
+mainWindow.width=850
+class.MyWorld.superclass=greenfoot.World
+project.charset=UTF-8
+version=2.8.0
+class.ObjectB.superclass=greenfoot.Actor
+world.lastInstantiated=MyWorld
+class.ObjectA.image=hedgehog.png
+mainWindow.y=40
+mainWindow.x=40
+class.ObjectA.superclass=greenfoot.Actor
+mainWindow.height=600
