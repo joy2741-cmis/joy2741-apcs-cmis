@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Feb 09 14:22:47 ICT 2017
+#Fri Feb 10 08:28:46 ICT 2017
 readme.name=@README
 target2.name=Shark
 target4.y=10
@@ -24,8 +24,8 @@ target2.height=50
 target1.x=170
 class.SoySauce.superclass=greenfoot.Actor
 target4.typeParameters=
-class.Chopstick.image=eb2ed44777fca9349719088334c8f332.jpg
 editor.fx.0.height=700
+class.Chopstick.image=eb2ed44777fca9349719088334c8f332.jpg
 target3.height=50
 target1.showInterface=false
 target3.typeParameters=

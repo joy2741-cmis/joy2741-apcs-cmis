@@ -16,7 +16,7 @@ public class Chopstick extends Actor
     public Chopstick()
     {
         GreenfootImage chopstick = getImage();
-        chopstick.scale(chopstick.getWidth(), chopstick.getHeight()); 
+        chopstick.scale(chopstick.getWidth()-750, chopstick.getHeight()-750); 
     }//end constructor
     
     public void act() 
