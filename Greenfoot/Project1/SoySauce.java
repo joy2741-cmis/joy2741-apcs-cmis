@@ -20,6 +20,19 @@ public class SoySauce extends Actor
 
     public void act() 
     {
-        // Add your action code here.
+        moveRandomly();
     }    
+    
+      public void moveRandomly()
+    {
+        move(2);
+        if( Greenfoot.getRandomNumber(3) == 0 )
+        {
+            turn(-15);
+        }
+        else if( Greenfoot.getRandomNumber(3) == 1 )
+        {
+            turn(15);
+        }
+    }//end moveRandomly
 }

@@ -8,20 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Gudetama extends Actor
 {
-    /**
-     * Act - do whatever the Gudetama wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
-    public Gudetama()
+    Actor target;
+
+    public Gudetama( Actor target )
     {        
         GreenfootImage gudetama = getImage();
         gudetama.scale(gudetama.getWidth()-150, gudetama.getHeight()-71); 
     }//end Gudetama
-    
+
     public void act() 
     {  
-        
-    }    
+        followTarget();
+    }//end act
     
+    public void followTarget()
+    {
+        turnTowards(target.getX(), target.getY());
+        move(1);
+    }//end followTarget
+
+
 }
