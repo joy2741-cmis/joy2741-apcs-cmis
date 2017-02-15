@@ -25,7 +25,7 @@ public class SoySauce extends Actor
     
       public void moveRandomly()
     {
-        move(2);
+        move(15);
         if( Greenfoot.getRandomNumber(3) == 0 )
         {
             turn(-15);

@@ -26,8 +26,8 @@ public class MyWorld extends World
         addObject(soySauce,100,300);
         Gudetama gudetama = new Gudetama(soySauce);
         addObject(gudetama,300,200);
-        Chopstick chopstick = new Chopstick();
-        addObject(chopstick,500,100);
+        Chopsticks chopsticks = new Chopsticks();
+        addObject(chopsticks,500,100);
     }//end prepare
 
     
