@@ -13,37 +13,45 @@ public class Chopsticks extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    int speed = 2;
-
     public Chopsticks()
     {
         GreenfootImage chopsticks = getImage();
         chopsticks.scale(chopsticks.getWidth()-750, chopsticks.getHeight()-750); 
-        this.speed = speed;
     }//end constructor
-
+    
     public void act() 
     {
         move();
+        pokeGudetama();
     }//end act
-
+    
     public void move()
     {
         if( Greenfoot.isKeyDown("up") )
         {
-            setLocation(getX(), getY()-speed);
+            setLocation(getX(), getY()-1);
         }
         else if( Greenfoot.isKeyDown("down") )
         {
-            setLocation(getX(), getY()+speed);
+            setLocation(getX(), getY()+1);
         }
         else if( Greenfoot.isKeyDown("left") )
         {
-            setLocation(getX()-speed, getY());
+            setLocation(getX()-1, getY());
         }
         else if( Greenfoot.isKeyDown("right") )
         {
-            setLocation(getX()+speed, getY());
+            setLocation(getX()+1, getY());
         }//end if
     }//end move
+    
+    public void pokeGudetama()
+    {
+        Actor gudetama = getOneObjectAtOffset(0,0,Gudetama.class);
+        if( gudetama != null )
+        {
+            getWorld().removeObject(gudetama);
+        }
+    }//end pokeGudetama
+    
 }
