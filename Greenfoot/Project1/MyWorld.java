@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    int time = 10;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -30,6 +30,4 @@ public class MyWorld extends World
         addObject(chopsticks,500,100);
     }//end prepare
 
-    
-    
 }

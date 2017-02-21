@@ -10,12 +10,12 @@ public class Gudetama extends Actor
 {
     Actor target;
     int speed = 1;
-    GreenfootImage shield;
-
+    int num;
+    
     public Gudetama( Actor target )
     {        
         GreenfootImage gudetama = getImage();
-        gudetama.scale(gudetama.getWidth()-150, gudetama.getHeight()-71); 
+        gudetama.scale( gudetama.getWidth()-150, gudetama.getHeight()-71); 
         this.target = target;
         this.speed = speed;
     }//end Gudetama
@@ -30,7 +30,7 @@ public class Gudetama extends Actor
         {
             moveRandomly();
         }//end if
-        soySauceBoost();
+        generateGudetama();
     }//end act
 
     public void followTarget()
@@ -57,14 +57,20 @@ public class Gudetama extends Actor
         }
     }//end moveRandomly
 
-    public void soySauceBoost()
+    public void generateGudetama()
     {
         Actor soySauce = getOneObjectAtOffset(0,0,SoySauce.class);
         if( soySauce != null )
         {
-            getWorld().removeObject(soySauce);
             speed += 7;         
             setTarget(null);
+            if( num < 5 )
+            {
+                Gudetama gudetama = new Gudetama(null);
+                getWorld().addObject( gudetama, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400) ); 
+                num++;
+                System.out.println(num);
+            }
         }
     }//end soySauceBoost
 
@@ -73,9 +79,14 @@ public class Gudetama extends Actor
         Actor chopsticks = getOneObjectAtOffset(0,0,Chopsticks.class);
         if( chopsticks != null && ((chopsticks.getX() - getX() < 50) || (chopsticks.getY() - getY() < 50)))
         {
-           turn(180);
-           move(1);
+            turn(180);
+            move(3);
         }//end if
     }//end avoidChopstick
+    
+    public void getNumGudetama()
+    {
+        
+    }//end getNumGudetama
 
 }
