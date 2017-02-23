@@ -29,25 +29,25 @@ public class Chopsticks extends Actor
     {
         if( Greenfoot.isKeyDown("up") )
         {
-            setLocation(getX(), getY()-1);
+            setLocation(getX(), getY()-5);
         }
         else if( Greenfoot.isKeyDown("down") )
         {
-            setLocation(getX(), getY()+1);
+            setLocation(getX(), getY()+5);
         }
         else if( Greenfoot.isKeyDown("left") )
         {
-            setLocation(getX()-1, getY());
+            setLocation(getX()-5, getY());
         }
         else if( Greenfoot.isKeyDown("right") )
         {
-            setLocation(getX()+1, getY());
+            setLocation(getX()+5, getY());
         }//end if
     }//end move
     
     public void pokeGudetama()
     {
-        Actor gudetama = getOneObjectAtOffset(0,0,Gudetama.class);
+        Actor gudetama = getOneObjectAtOffset(-250,-250,Gudetama.class);
         if( gudetama != null )
         {
             getWorld().removeObject(gudetama);

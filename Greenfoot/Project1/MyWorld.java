@@ -9,10 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     int time = 10;
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    int numGd = 1;
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -29,5 +27,17 @@ public class MyWorld extends World
         Chopsticks chopsticks = new Chopsticks();
         addObject(chopsticks,500,100);
     }//end prepare
+    
+    public void generateGudetama()
+    {
+        Gudetama gudetama = new Gudetama(null);
+        addObject(gudetama, Greenfoot.getRandomNumber(400), Greenfoot.getRandomNumber(200));
+        numGd++;
+    }//end generateGudetama
+    
+    public int getNumGd()
+    {
+        return numGd;
+    }//end getNumGd
 
 }

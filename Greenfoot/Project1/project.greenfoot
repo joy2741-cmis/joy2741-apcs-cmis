@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Feb 21 09:01:55 ICT 2017
+#Thu Feb 23 14:05:01 ICT 2017
 target4.type=ClassTarget
 class.Gudetama.superclass=greenfoot.Actor
 dependency3.from=MyWorld
@@ -17,6 +17,7 @@ dependency4.from=MyWorld
 mainWindow.width=850
 dependency4.type=UsesDependency
 target2.width=100
+class.gudetamaCounter.superclass=greenfoot.Actor
 class.gameWorld.superclass=greenfoot.World
 version=2.8.0
 class.SoySauce.superclass=greenfoot.Actor
@@ -64,6 +65,7 @@ readme.height=58
 class.Chopsticks.image=eb2ed44777fca9349719088334c8f332.jpg
 target2.name=Gudetama
 readme.name=@README
+simulation.speed=44
 package.numDependencies=5
 target4.naviview.expanded=true
 target3.type=ClassTarget
@@ -71,11 +73,11 @@ target4.width=90
 dependency2.from=Gudetama
 dependency2.type=UsesDependency
 world.lastInstantiated=MyWorld
-mainWindow.height=600
 target2.showInterface=false
+mainWindow.height=600
 editor.swing.0.height=700
 target3.name=Chopsticks
-class.MyWorld.image=2334c6705520443c67ffe2ec3eb06356.jpg
-target3.width=100
 project.charset=UTF-8
+target3.width=100
+class.MyWorld.image=2334c6705520443c67ffe2ec3eb06356.jpg
 target4.showInterface=false

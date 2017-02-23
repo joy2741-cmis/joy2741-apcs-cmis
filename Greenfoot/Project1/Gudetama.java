@@ -60,33 +60,27 @@ public class Gudetama extends Actor
     public void generateGudetama()
     {
         Actor soySauce = getOneObjectAtOffset(0,0,SoySauce.class);
-        if( soySauce != null )
+        MyWorld world = (MyWorld) getWorld();
+        if( soySauce != null && ( world.getNumGd() < 5 ) )
         {
-            speed += 7;         
-            setTarget(null);
-            if( num < 5 )
-            {
-                Gudetama gudetama = new Gudetama(null);
-                getWorld().addObject( gudetama, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400) ); 
-                num++;
-                System.out.println(num);
-            }
+            world.generateGudetama();
         }
     }//end soySauceBoost
 
     public void avoidChopstick()
     {
         Actor chopsticks = getOneObjectAtOffset(0,0,Chopsticks.class);
-        if( chopsticks != null && ((chopsticks.getX() - getX() < 50) || (chopsticks.getY() - getY() < 50)))
+        if( chopsticks != null && ((chopsticks.getX() - getX() < 50) || (chopsticks.getY() - getY() < 50)) )
         {
             turn(180);
             move(3);
         }//end if
     }//end avoidChopstick
     
-    public void getNumGudetama()
+    /*
+    public Actor getGudetama()
     {
         
-    }//end getNumGudetama
-
+    }//end getGudetama
+    */
 }
