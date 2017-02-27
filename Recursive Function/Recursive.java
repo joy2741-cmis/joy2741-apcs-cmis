@@ -1,31 +1,42 @@
 
-/**
- * Write a description of class Recusive here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Recursive
 {
-
-    public int pow( int x, int n )
+    public static void main( String[] args )
     {
-        if( x < 10 )
+        System.out.println(add(2,4));
+    }//end method
+
+    //multiplication
+    public static int pow( int x, int n )
+    {
+        if( n == 0 )
         {
-            x = x * n;
+            return 1;
         }
         else
         {
-            x = x/3;
-        }
-        
-        return pow(5,2);        
+            return pow(x,n-1) * x;
+        }//end if-else
     }//end pow
+
+    //addition
+    public static int add( int x, int n )
+    {
+        if( n == 0 )
+        {
+            return 1;
+        }
+        else
+        {
+            return add(x, n*2) + x;
+        }//end if-else
+    }//end add
 
 }//end class
 /*
-x   n   x^n
-1   2   2
-2   2   4
-4   2   16
-*/
+x   x^n 
+2   2^1   2
+2   4     2+2
+2   8     2+2+2+2
+2   16    2+2+2+2+2+2+2+2
+ */
