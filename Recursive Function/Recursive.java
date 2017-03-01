@@ -3,7 +3,7 @@ public class Recursive
 {
     public static void main( String[] args )
     {
-        System.out.println(add(2,4));
+        System.out.println(add(10,3));
     }//end method
 
     //multiplication
@@ -26,17 +26,21 @@ public class Recursive
         {
             return 1;
         }
-        else
+        else if( n == 1 )
         {
-            return add(x, n*2) + x;
-        }//end if-else
+            return x;
+        }
+        else
+        {            
+            System.out.println(x);
+            x = x + x + x;
+            
+            if( n > 0)
+            {
+                return add(x,n);
+            }
+            return 1;
+        }//if - else if - else        
     }//end add
 
 }//end class
-/*
-x   x^n 
-2   2^1   2
-2   4     2+2
-2   8     2+2+2+2
-2   16    2+2+2+2+2+2+2+2
- */
