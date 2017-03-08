@@ -1,22 +1,27 @@
 
 public class Recursion
 {
+
     public static void main( String[] args )
-    {
+    {       
         int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0 };
-        int[] sorted = sort(nums);
+        int[] sorted = new int[nums.length-1];
         
+        sort(nums);
         for( int n : sorted )
         {
             System.out.print( n + " ");
         }//end for
-            
     }//end method
     
+    //sort
     public static int[] sort( int[] nums )
     {
+        int[] sorted = new int[nums.length-1];
+        int numsLength = nums.length-1;
         int max = 0;
-        int[] sorted = new int[nums.length];
+        int pMax = 100;
+        System.out.println("Num length: " + numsLength);
         for( int i = 0; i < nums.length; i++ )
         {
             if( nums[i] > max )
@@ -27,10 +32,9 @@ public class Recursion
                     sorted[n] = max;
                 }//end for
                 nums[i] = -1;
-                max = 0;
             }
         }//end for
-        return sorted;
+        return sort(sorted);
     }//end sort
 
     //multiplication
@@ -61,7 +65,6 @@ public class Recursion
         {            
             System.out.println(x);
             x = x + x + x;
-            
             if( n > 0)
             {
                 return add(x,n);
