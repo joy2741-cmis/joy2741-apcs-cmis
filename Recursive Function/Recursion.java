@@ -5,37 +5,56 @@ public class Recursion
     public static void main( String[] args )
     {       
         int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0 };
-        int[] sorted = new int[nums.length-1];
-        
-        sort(nums);
-        for( int n : sorted )
-        {
-            System.out.print( n + " ");
-        }//end for
-    }//end method
-    
-    //sort
-    public static int[] sort( int[] nums )
-    {
-        int[] sorted = new int[nums.length-1];
-        int numsLength = nums.length-1;
-        int max = 0;
-        int pMax = 100;
-        System.out.println("Num length: " + numsLength);
         for( int i = 0; i < nums.length; i++ )
         {
-            if( nums[i] > max )
-            {
-                max = nums[i];
-                for( int n = sorted.length; n > -1; n-- )
-                {
-                    sorted[n] = max;
-                }//end for
-                nums[i] = -1;
-            }
+            System.out.print( nums[i] + " ");
         }//end for
-        return sort(sorted);
+    }//end method
+
+    /*
+    public static int[] sort( int[] nums )
+    {
+    int[] sorted = new int[nums.length-1];
+    int min = 100;
+    for( int i = 0; i < nums.length; i++ ) //find min
+    {
+    int num = nums[i];
+    if( num != -1 )
+    {
+    if( num < min )
+    {
+    min = num;
+    num = -1;
+    }//end if
+    }//end if
+    }//end for
+
+    for( int idx = 0; idx < nums.length; idx++ ) //add to array
+    {
+    if( sorted[idx] == 0 )
+    {
+
+    }//end if
+    }//end for
+    return sort(nums);
     }//end sort
+
+     */
+
+    public static int[] bubbleSort( int[] nums )
+    {
+        int stored = 0;
+        for( int i = 0; i < 2; i++ )
+        {
+            if( nums[i] < nums[i+1] )
+            {
+                stored = nums[i];
+                nums[i] = nums[i+1];
+                nums[i+1] = stored;
+            }//end if
+        }//end for
+        return bubbleSort(nums);
+    }//end bubbleSort
 
     //multiplication
     public static int pow( int x, int n )
