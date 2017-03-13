@@ -5,56 +5,61 @@ public class Recursion
     public static void main( String[] args )
     {       
         int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0 };
+        //bubbleSort(nums);
+        bubbleSortNotRecursive(nums);
         for( int i = 0; i < nums.length; i++ )
         {
             System.out.print( nums[i] + " ");
         }//end for
     }//end method
 
-    /*
-    public static int[] sort( int[] nums )
-    {
-    int[] sorted = new int[nums.length-1];
-    int min = 100;
-    for( int i = 0; i < nums.length; i++ ) //find min
-    {
-    int num = nums[i];
-    if( num != -1 )
-    {
-    if( num < min )
-    {
-    min = num;
-    num = -1;
-    }//end if
-    }//end if
-    }//end for
-
-    for( int idx = 0; idx < nums.length; idx++ ) //add to array
-    {
-    if( sorted[idx] == 0 )
-    {
-
-    }//end if
-    }//end for
-    return sort(nums);
-    }//end sort
-
-     */
-
     public static int[] bubbleSort( int[] nums )
     {
         int stored = 0;
-        for( int i = 0; i < 2; i++ )
+        int counter = 0;
+        boolean sorted = true;
+
+        for( int j = 1; j < nums.length; j++ )//run through array
         {
-            if( nums[i] < nums[i+1] )
+            for( int i = j; counter < 2; counter++ )//two numbers
             {
-                stored = nums[i];
-                nums[i] = nums[i+1];
-                nums[i+1] = stored;
-            }//end if
+                if( nums[i-1] > nums[i] )//compare nums[i] to the previous number
+                {
+                    stored = nums[i-1];
+                    nums[i-1] = nums[i];
+                    nums[i] = stored;
+                }//end if
+            }//end for
+
+            for( int n = 0; n < nums.length; n++ )
+            {
+                System.out.print(nums[n] + " ");
+            }//end for
+            counter = 0;
+            System.out.println();
         }//end for
+
         return bubbleSort(nums);
     }//end bubbleSort
+
+    public static int[] bubbleSortNotRecursive( int[] nums )
+    {
+        int stored = 0;
+
+        for( int j = 0; j < nums.length; j++ )
+        {
+            for( int i = 1; i < nums.length-j; i++ )
+            {
+                if( nums[i-1] > nums[i] )
+                {
+                    stored = nums[i-1];
+                    nums[i-1] = nums[i];
+                    nums[i] = stored;
+                }//end if
+            }//end for
+        }//end for
+        return nums;
+    }//end bubbleSortNotRecursive
 
     //multiplication
     public static int pow( int x, int n )

@@ -3,9 +3,10 @@ comment0.params=args
 comment0.target=void\ main(java.lang.String[])
 comment1.params=nums
 comment1.target=int[]\ bubbleSort(int[])
-comment1.text=\n\ \ \ \ public\ static\ int[]\ sort(\ int[]\ nums\ )\n\ \ \ \ {\n\ \ \ \ int[]\ sorted\ \=\ new\ int[nums.length-1];\n\ \ \ \ int\ min\ \=\ 100;\n\ \ \ \ for(\ int\ i\ \=\ 0;\ i\ <\ nums.length;\ i++\ )\ //find\ min\n\ \ \ \ {\n\ \ \ \ int\ num\ \=\ nums[i];\n\ \ \ \ if(\ num\ \!\=\ -1\ )\n\ \ \ \ {\n\ \ \ \ if(\ num\ <\ min\ )\n\ \ \ \ {\n\ \ \ \ min\ \=\ num;\n\ \ \ \ num\ \=\ -1;\n\ \ \ \ }//end\ if\n\ \ \ \ }//end\ if\n\ \ \ \ }//end\ for\n\n\ \ \ \ for(\ int\ idx\ \=\ 0;\ idx\ <\ nums.length;\ idx++\ )\ //add\ to\ array\n\ \ \ \ {\n\ \ \ \ if(\ sorted[idx]\ \=\=\ 0\ )\n\ \ \ \ {\n\n\ \ \ \ }//end\ if\n\ \ \ \ }//end\ for\n\ \ \ \ return\ sort(nums);\n\ \ \ \ }//end\ sort\n\n
-comment2.params=x\ n
-comment2.target=int\ pow(int,\ int)
+comment2.params=nums
+comment2.target=int[]\ bubbleSortNotRecursive(int[])
 comment3.params=x\ n
-comment3.target=int\ add(int,\ int)
-numComments=4
+comment3.target=int\ pow(int,\ int)
+comment4.params=x\ n
+comment4.target=int\ add(int,\ int)
+numComments=5
