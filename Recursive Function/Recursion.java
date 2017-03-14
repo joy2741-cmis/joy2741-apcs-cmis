@@ -4,7 +4,7 @@ public class Recursion
 
     public static void main( String[] args )
     {       
-        int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0 };
+        int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0, 0, 99 };
         //bubbleSort(nums);
         bubbleSortNotRecursive(nums);
         for( int i = 0; i < nums.length; i++ )
@@ -45,7 +45,6 @@ public class Recursion
     public static int[] bubbleSortNotRecursive( int[] nums )
     {
         int stored = 0;
-
         for( int j = 0; j < nums.length; j++ )
         {
             for( int i = 1; i < nums.length-j; i++ )
