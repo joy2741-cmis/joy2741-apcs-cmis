@@ -8,7 +8,7 @@ public class Cheese extends Actor
         img = new GreenfootImage(20, 20);
         img.setColor(Color.yellow);
         img.fill();
-        freshness = 500 + Greenfoot.getRandomNumber(500);
+        freshness = 500 + Greenfoot.getRandomNumber(500); //min 500 max 1000
         setImage(img);
     }
 
@@ -16,7 +16,7 @@ public class Cheese extends Actor
     }
 
     public boolean isRotten(){
-        return freshness < 0;
+        return freshness < 0; //if less than 0, then it is rotten
     }
 
 }
