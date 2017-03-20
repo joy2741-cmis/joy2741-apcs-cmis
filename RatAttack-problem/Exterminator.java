@@ -27,15 +27,15 @@ public class Exterminator extends Actor
         }
         if(Greenfoot.isKeyDown("j") && delay-- <= 0){
             dropCheese();
-            delay = 25;
+            delay = 25; //pause and drop cheese
         } 
     }    
 
     public void dropCheese(){
-        if(cheeseCount > 0){
+        if(cheeseCount > 0){ //no more than five
             MyWorld w = (MyWorld)getWorld();
             w.addCheese(getX(), getY());
-            cheeseCount--;
+            cheeseCount--; 
         }
     }
 
@@ -43,7 +43,7 @@ public class Exterminator extends Actor
         if(isTouching(Rat.class)){
             MyWorld w = (MyWorld)getWorld();
             w.lose();
-        }
+        } /
     }
     
 }
