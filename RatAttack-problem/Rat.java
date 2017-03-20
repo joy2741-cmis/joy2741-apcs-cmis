@@ -22,6 +22,10 @@ public class Rat extends Actor
             moveTowardCheese(closest);
             //else, move towards the closest cheese
         }
+        if( eaten == 3 )
+        {
+            addRat();
+        }//end if
         die();//if touches trap, dies
     }   
 
@@ -99,4 +103,10 @@ public class Rat extends Actor
             w.score(); //calculate score
         }
     }
+    
+    public void addRat(){
+        MyWorld w = (MyWorld)getWorld();
+        w.addObject(new Rat(), getX(), getY());
+        eaten = 0;
+    }//end addRat
 }

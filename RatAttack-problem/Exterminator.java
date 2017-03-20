@@ -38,12 +38,21 @@ public class Exterminator extends Actor
             cheeseCount--; 
         }
     }
+    
+    public void pickUpBomb(){
+        CheeseBomb cheeseBomb = (CheeseBomb)getOneIntersectingObject(CheeseBomb.class); 
+        if( cheeseBomb != null){ 
+            World w = getWorld();
+            w.removeObject(cheeseBomb); 
+            cheeseCount += 5; 
+        }
+    }
 
     public void die(){
         if(isTouching(Rat.class)){
             MyWorld w = (MyWorld)getWorld();
             w.lose();
-        } /
+        } 
     }
     
 }

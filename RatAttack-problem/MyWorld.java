@@ -10,6 +10,8 @@ public class MyWorld extends World
     {
         super(600, 400, 1); 
         init(level);
+        addRat();
+        addCheeseBomb();
     }
 
     public void init(int level){
@@ -23,9 +25,43 @@ public class MyWorld extends World
         }
         addObject(new Exterminator(), 520, 200);//add exterminator
         addObject(new Trap(), 550, 200);//add trap(skull)
-        startTime = System.currentTimeMillis();//get current time
+        startTime = System.currentTimeMillis();//get current time       
 
     }
+
+    public void addRat(){
+        runningTime = System.currentTimeMillis() - startTime;
+        if( (runningTime/1000.0) == 5 )
+        {
+            addObject(new Rat(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400));
+        }//end if
+    }//end addRat
+
+    public void addCheeseBomb()
+    {
+        CheeseBomb cheeseBomb = new CheeseBomb();
+        cheeseBomb.countDown();
+        if( cheeseBomb.getTimer() == 0 )
+        {
+            if( Greenfoot.getRandomNumber(4) == 0 )
+            {
+                addObject(cheeseBomb,0 + Greenfoot.getRandomNumber(200), 0 - Greenfoot.getRandomNumber(100));
+            }//top left
+            else if( Greenfoot.getRandomNumber(4) == 1 ) 
+            {
+                addObject(cheeseBomb,600 - Greenfoot.getRandomNumber(200), 0 -Greenfoot.getRandomNumber(100));
+            }//top right
+            else if( Greenfoot.getRandomNumber(4) == 2 ) 
+            {
+                addObject(cheeseBomb,0 + Greenfoot.getRandomNumber(200), 400 - Greenfoot.getRandomNumber(100));
+            }//bottom left
+            else if( Greenfoot.getRandomNumber(4) == 3 ) 
+            {
+                addObject(cheeseBomb,600 - Greenfoot.getRandomNumber(200), 400 - Greenfoot.getRandomNumber(100));
+            }//bottom right
+        }//end if
+        cheeseBomb.setTimer(1000);
+    }//end addCheeseBomb
 
     public void act(){
         runningTime = System.currentTimeMillis() - startTime;
@@ -41,7 +77,6 @@ public class MyWorld extends World
     public void addCheese(int x, int y){
         addObject(new Cheese(), x, y);//add cheese
     }
-
 
     public void score(){
         score++;//add score

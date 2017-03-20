@@ -1,7 +1,8 @@
 #Greenfoot properties
-#Thu Mar 16 09:32:28 ICT 2017
+#Mon Mar 20 11:42:47 ICT 2017
 class.Rat.superclass=greenfoot.Actor
 project.charset=UTF-8
+class.CheeseBomb.image=pizza_cheese.png
 class.Trap.image=skull.png
 class.Rat.image=mouse.png
 mainWindow.height=600
