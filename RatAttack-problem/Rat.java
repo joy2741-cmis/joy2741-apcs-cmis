@@ -83,20 +83,20 @@ public class Rat extends Actor
     }
     
     public void eat(){
-        Cheese cheese = (Cheese)getOneIntersectingObject(Cheese.class);
-        if( cheese != null){
+        Cheese cheese = (Cheese)getOneIntersectingObject(Cheese.class); //touching a cheese
+        if( cheese != null){ //if there's cheese
             World w = getWorld();
-            w.removeObject(cheese);
-            eaten++;
+            w.removeObject(cheese); //remove cheese
+            eaten++; //increment eaten
         }
     }
     
     
     public void die(){
-        if(isTouching(Trap.class)){
+        if(isTouching(Trap.class)){ //if rat touches trap
             MyWorld w = (MyWorld)getWorld();
-            w.removeObject(this);
-            w.score();
+            w.removeObject(this); //remove world
+            w.score(); //calculate score
         }
     }
 }
