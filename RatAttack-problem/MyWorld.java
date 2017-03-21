@@ -10,8 +10,6 @@ public class MyWorld extends World
     {
         super(600, 400, 1); 
         init(level);
-        addRat();
-        addCheeseBomb();
     }
 
     public void init(int level){
@@ -31,9 +29,9 @@ public class MyWorld extends World
 
     public void addRat(){
         runningTime = System.currentTimeMillis() - startTime;
-        if( (runningTime/1000.0) == 5 )
+        if( (runningTime/1000.0) == 15.0 )
         {
-            addObject(new Rat(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400));
+            addObject(new Rat(), 100,100 );
         }//end if
     }//end addRat
 
@@ -41,26 +39,7 @@ public class MyWorld extends World
     {
         CheeseBomb cheeseBomb = new CheeseBomb();
         cheeseBomb.countDown();
-        if( cheeseBomb.getTimer() == 0 )
-        {
-            if( Greenfoot.getRandomNumber(4) == 0 )
-            {
-                addObject(cheeseBomb,0 + Greenfoot.getRandomNumber(200), 0 - Greenfoot.getRandomNumber(100));
-            }//top left
-            else if( Greenfoot.getRandomNumber(4) == 1 ) 
-            {
-                addObject(cheeseBomb,600 - Greenfoot.getRandomNumber(200), 0 -Greenfoot.getRandomNumber(100));
-            }//top right
-            else if( Greenfoot.getRandomNumber(4) == 2 ) 
-            {
-                addObject(cheeseBomb,0 + Greenfoot.getRandomNumber(200), 400 - Greenfoot.getRandomNumber(100));
-            }//bottom left
-            else if( Greenfoot.getRandomNumber(4) == 3 ) 
-            {
-                addObject(cheeseBomb,600 - Greenfoot.getRandomNumber(200), 400 - Greenfoot.getRandomNumber(100));
-            }//bottom right
-        }//end if
-        cheeseBomb.setTimer(1000);
+        cheeseBomb.setTimer(Greenfoot.getRandomNumber(100) + 950);
     }//end addCheeseBomb
 
     public void act(){
@@ -71,7 +50,9 @@ public class MyWorld extends World
         }
         showText(score+"  "+(int)(15 -(runningTime/1000.0)), 50, 50);
         //15 is the limit
-        //runningTime/1000 convert millisecond to second
+        //runningTime/1000 convert millisecond to second        
+        addRat();
+        addCheeseBomb();
     }
 
     public void addCheese(int x, int y){
