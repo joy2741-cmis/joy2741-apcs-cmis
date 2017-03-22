@@ -19,8 +19,9 @@ public class Cheese extends Actor
 
     public void freshness(){        
         System.out.println("F: " + freshness);
-        while( freshness > 0 )
-        {
+        freshness--;
+        //while( freshness > 0 )
+        //{
             if( freshness <= freshness/2 )
             {
                 img.setColor(Color.green);
@@ -44,8 +45,7 @@ public class Cheese extends Actor
                 MyWorld w = (MyWorld)getWorld();
                 w.removeObject(this); //remove world
             }
-            freshness--;
-        }//end while
+       // }//end while //number 4
     }//end freshness
 
     public boolean isRotten(){

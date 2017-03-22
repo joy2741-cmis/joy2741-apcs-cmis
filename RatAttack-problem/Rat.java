@@ -59,7 +59,7 @@ public class Rat extends Actor
         {
             MyWorld w = (MyWorld)getWorld();
             w.addObject(new RatDisease(), getX(), getY());
-        }
+        }//number 7 
     }//end increaseRisk
 
     public void moveTowardCheese(Cheese cheese){
@@ -95,7 +95,7 @@ public class Rat extends Actor
             //if there's cheese in the array, get the first one
         } 
         return target; //return no cheese or the closet cheese
-    }
+    }//number 5 //nothing change 
 
     public void eat(){
         Cheese cheese = (Cheese)getOneIntersectingObject(Cheese.class); //touching a cheese
