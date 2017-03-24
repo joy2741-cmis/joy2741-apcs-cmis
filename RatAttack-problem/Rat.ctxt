@@ -12,6 +12,7 @@ comment5.params=cheese
 comment5.target=void\ moveTowardCheese(Cheese)
 comment6.params=range
 comment6.target=Cheese\ getTargetCheese(int)
+comment6.text=\n\ \ \ \ public\ Cheese\ getTargetCheese(int\ range){\ //check\ for\ cheese\ to\ pick\ up\n\ \ \ \ Cheese\ target\ \=\ null;\ //set\ target\ to\ none\n\ \ \ \ List<Cheese>\ cheeses\ \=\ getObjectsInRange(range,\ Cheese.class);\n\ \ \ \ if\ (cheeses.size()\ \=\=\ 0){\n\ \ \ \ target\ \=\ null;\n\ \ \ \ //if\ there's\ no\ cheese\ in\ the\ array,\ no\ target\n\ \ \ \ }else\ if(\ cheeses.size()\ >\=\ 1\ ){\n\ \ \ \ target\ \=\ cheeses.get(0);\n\ \ \ \ //if\ there's\ cheese\ in\ the\ array,\ get\ the\ first\ one\n\ \ \ \ }\ \n\ \ \ \ return\ target;\ //return\ no\ cheese\ or\ the\ closet\ cheese\n\ \ \ \ }\n
 comment7.params=
 comment7.target=void\ eat()
 comment8.params=

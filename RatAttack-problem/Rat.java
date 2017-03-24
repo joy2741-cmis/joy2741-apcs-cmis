@@ -84,16 +84,31 @@ public class Rat extends Actor
         setLocation(x + dx, y + dy);//move
     }
 
+    /*
     public Cheese getTargetCheese(int range){ //check for cheese to pick up
-        Cheese target = null; //set target to none
+    Cheese target = null; //set target to none
+    List<Cheese> cheeses = getObjectsInRange(range, Cheese.class);
+    if (cheeses.size() == 0){
+    target = null;
+    //if there's no cheese in the array, no target
+    }else if( cheeses.size() >= 1 ){
+    target = cheeses.get(0);
+    //if there's cheese in the array, get the first one
+    } 
+    return target; //return no cheese or the closet cheese
+    }
+     */
+    public Cheese getTargetCheese(int range){ //check for cheese to pick up
+        Cheese target = null;
         List<Cheese> cheeses = getObjectsInRange(range, Cheese.class);
-        if (cheeses.size() == 0){
-            target = null;
-            //if there's no cheese in the array, no target
-        }else if( cheeses.size() >= 1 ){
-            target = cheeses.get(0);
-            //if there's cheese in the array, get the first one
-        } 
+        if( cheeses.size() > 0 )
+        {
+            for( int i = 0; i < cheeses.size(); i++ )
+            {
+                
+            }//end for
+        }//end if
+      
         return target; //return no cheese or the closet cheese
     }//number 5 //nothing change 
 
