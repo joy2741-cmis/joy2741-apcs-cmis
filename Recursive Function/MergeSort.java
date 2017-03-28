@@ -3,7 +3,7 @@ public class MergeSort
 {
     public static void main( String[] args )
     {       
-        int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0, 0, 99 };
+        int[] nums = new int[] { 3, 7, 1, 9, 5, 8, 6, 2, 4, 0, 0, 99, 7 };
         int[] placements = new int[nums.length];
         split(nums);
     }//end method
@@ -11,15 +11,14 @@ public class MergeSort
     public static int[] split( int[] nums )
     {
         int counter = 0;
-        int[] numsCopied = Arrays.copyOf(nums, 1);
+        int[] left = Arrays.copyOf(nums, nums.length/2);
+        int[] right = Arrays.copyOfRange(nums, nums.length/2, nums.length);
 
-        for( int i = 1; i < numsCopied.length; i++ )//run through nums
+        for( int i = 0; i < numsCopied.length; i++ )//run through nums
         {
-            for( int j = i; counter < 2; counter++, j++ )
-            {
-                System.out.println(numsCopied[i]);
-            }//end for
+            System.out.print(numsCopied[i] + " ");
         }//end for
+        System.out.println();
         return nums;
     }//end split
 
