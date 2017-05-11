@@ -21,9 +21,9 @@ public abstract class Character extends Actor
         this.maxAD = maxAD;
     }//end constructor
 
-    public abstract void attack();
+    public abstract int attack();
 
-    public abstract void skill();
+    public abstract int skill();
 
     public abstract int lowerHealth();
 
@@ -37,6 +37,11 @@ public abstract class Character extends Actor
     {
         return health;
     }//end getHealth
+    
+    public void setHealth( int newHealth )
+    {
+        health = newHealth;
+    }//end setHealth
 
     public int getMana()
     {

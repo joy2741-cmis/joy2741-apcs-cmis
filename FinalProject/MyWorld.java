@@ -17,8 +17,21 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        Character hero = new Hero();
+        Character slime1 = new Slime(null);
+        Character hero = new Hero(slime1);
+        Character slime = new Slime(hero);
+
+        /*
+        System.out.println("Hero's health: " + hero.getHealth());
+        System.out.println("Slime's health: " + slime.getHealth());
+        slime.lowerHealth();
+        System.out.println("Slime's health: " + slime.getHealth());
+         */
+        
+        System.out.println("///////////////////");
+        System.out.println("Hero's health: " + hero.getHealth());
         hero.lowerHealth();
+        System.out.println("Hero's health: " + hero.getHealth());
+
     }
-    
 }

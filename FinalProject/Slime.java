@@ -1,59 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Hero here.
+ * Write a description of class Slime here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Hero extends Character
+public class Slime extends Character
 {
-    int lvl;
-    int exp;
     Character target;
 
-    public Hero( Character target )
+    public Slime( Character target )
     {
-        super(50, 50, 5, 20);
-        lvl = 1;
-        exp = 0;
+        super(20, 15, 2, 7);
         this.target = target;
     }//end constructor
-
-    public void act() 
-    {
-        
-    }//end act 
-    
-    
-    //ADDITIONAL METHODS
-    public int randomEXP()
-    {
-        int randomEXP = Greenfoot.getRandomNumber(30) * lvl;
-        return randomEXP;
-    }//end randomEXP
-
-    public void gainEXP()
-    {
-        int additionalEXP = randomEXP();
-        exp += additionalEXP;       
-    }
-
-    public void resetEXP( int newEXP )
-    {
-        exp = 0;
-    }
-
-    public void levelUp()
-    {
-        int requirement = 100 * lvl;
-        if( exp == requirement )
-        {
-            lvl++;
-            resetEXP(0);
-        }
-    }
-        
 
     //METHODS INHERITED FROM CHARACTER
     public int attack()
@@ -77,7 +38,7 @@ public class Hero extends Character
 
         return health;
     }//end lowerHealth
-
+    
     public int lowerMana()
     {
         int mana = getMana();
@@ -93,5 +54,33 @@ public class Hero extends Character
     {
         return 0;
     }//end lowerMana
-   
+
+    public int getHealth()
+    {
+        return health;
+    }//end getHealth
+
+    public int getMana()
+    {
+        return mana;
+    }//end getMana
+
+    public int getMinAD()
+    {
+        return minAD;
+    }//end getMinAD
+
+    public int getMaxAD()
+    {
+        return maxAD;
+    }//end getMaxAD
+
+    public boolean isDead()
+    {
+        if( getHealth() == 0 )
+        {
+            return true;
+        }
+        return false;
+    }//end isDead()
 }
