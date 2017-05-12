@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Character here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public abstract class Character extends Actor
 {
     int health;
@@ -46,7 +40,12 @@ public abstract class Character extends Actor
     public int getMana()
     {
         return mana;
-    }//end getMana
+    }//end getMana    
+    
+    public void setMana( int newMana )
+    {
+        mana = newMana;
+    }//end setHealth
 
     public int getMinAD()
     {
@@ -57,6 +56,11 @@ public abstract class Character extends Actor
     {
         return maxAD;
     }//end getMaxAD
+    
+    public void setMaxAD( int newMaxAD )
+    {
+        maxAD = newMaxAD;
+    }//end setMaxAD
 
     public boolean isDead()
     {
@@ -67,4 +71,4 @@ public abstract class Character extends Actor
         return false;
     }//end isDead()
 
-}
+}//end class

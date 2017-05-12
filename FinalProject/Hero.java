@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Hero here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Hero extends Character
 {
     int lvl;
@@ -22,27 +16,37 @@ public class Hero extends Character
 
     public void act() 
     {
-        
-    }//end act 
-    
-    
-    //ADDITIONAL METHODS
-    public int randomEXP()
-    {
-        int randomEXP = Greenfoot.getRandomNumber(30) * lvl;
-        return randomEXP;
-    }//end randomEXP
 
-    public void gainEXP()
+    }//end act 
+
+    //ADDITIONAL METHODS
+    public int attack()
     {
-        int additionalEXP = randomEXP();
-        exp += additionalEXP;       
-    }
+        int randomAD = getMinAD() + Greenfoot.getRandomNumber(getMaxAD() - getMinAD());
+        return randomAD;
+    }//end attack
+
+    public boolean isFighting()
+    {
+        while( isTouching( Slime.class ) )
+        {
+            if( Greenfoot.isKeyDown("Space"))
+            {
+                return true;
+            }
+        }//end while
+        return false;
+    }//end is Fighting
 
     public void resetEXP( int newEXP )
     {
         exp = 0;
     }
+
+    public int getLvl()
+    {
+        return lvl;
+    }//end getLvl
 
     public void levelUp()
     {
@@ -50,18 +54,14 @@ public class Hero extends Character
         if( exp == requirement )
         {
             lvl++;
+            setMaxAD(getMaxAD() + Greenfoot.getRandomNumber(30)); //increase AD
+            setHealth(getHealth() + Greenfoot.getRandomNumber(50)); //increase Health
+            setMana(getMana() + Greenfoot.getRandomNumber(50)); //increase Mana
             resetEXP(0);
         }
     }
-        
 
     //METHODS INHERITED FROM CHARACTER
-    public int attack()
-    {
-        int randomAD = getMinAD() + Greenfoot.getRandomNumber(getMaxAD() - getMinAD());  
-        return randomAD;
-    }//end attack
-
     public int skill()
     {
         return 0;
@@ -74,9 +74,14 @@ public class Hero extends Character
         System.out.println("target.attack(): " + damage);
         int newHealth = health - damage;
         setHealth(newHealth);
-
         return health;
-    }//end lowerHealth
+    }//end lowerHealth       
+
+    public int randomEXP()
+    {
+        int randomEXP = Greenfoot.getRandomNumber(30) * lvl;
+        return randomEXP;
+    }//end randomEXP
 
     public int lowerMana()
     {
@@ -93,5 +98,5 @@ public class Hero extends Character
     {
         return 0;
     }//end lowerMana
-   
+
 }

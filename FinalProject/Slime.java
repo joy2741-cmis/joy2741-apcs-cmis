@@ -35,7 +35,6 @@ public class Slime extends Character
         System.out.println("target.attack(): " + damage);
         int newHealth = health - damage;
         setHealth(newHealth);
-
         return health;
     }//end lowerHealth
     
@@ -73,7 +72,13 @@ public class Slime extends Character
     public int getMaxAD()
     {
         return maxAD;
-    }//end getMaxAD
+    }//end getMaxAD    
+        
+    public int randomEXP()
+    {
+        int randomEXP = Greenfoot.getRandomNumber(30);
+        return randomEXP;
+    }//end randomEXP
 
     public boolean isDead()
     {
