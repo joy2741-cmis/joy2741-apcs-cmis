@@ -1,14 +1,16 @@
 #Greenfoot properties
-#Fri May 12 13:47:22 ICT 2017
-class.Slime.superclass=Hero
+#Tue May 16 09:37:09 ICT 2017
+class.Slime.superclass=Character
+class.Slime.image=beeper.png
 class.g.superclass=Hero
 mainWindow.width=850
-class.MyWorld.superclass=greenfoot.World
+class.level.superclass=greenfoot.World
 project.charset=UTF-8
 version=2.8.0
-world.lastInstantiated=MyWorld
+world.lastInstantiated=o
 class.Character.superclass=greenfoot.Actor
-mainWindow.y=40
 class.Hero.superclass=Character
+mainWindow.y=40
 mainWindow.x=40
 mainWindow.height=600
+class.level1.superclass=level
