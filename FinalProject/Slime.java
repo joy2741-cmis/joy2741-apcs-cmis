@@ -15,6 +15,25 @@ public class Slime extends Character
         super(20, 15, 2, 7);
         this.target = target;
     }//end constructor
+    
+    public void act()
+    {
+        moveRandomly();
+    }//end act
+    
+    public void moveRandomly()
+    {
+        move(1);
+        int random = Greenfoot.getRandomNumber(4);
+        if( random == 0 )
+        {
+            turn(-15);
+        }
+        else if( random == 1 )
+        {
+            turn(15);
+        }
+    }//end moveRandomly
 
     //METHODS INHERITED FROM CHARACTER
     public int attack()
