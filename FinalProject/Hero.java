@@ -18,6 +18,26 @@ public class Hero extends Character
     {
 
     }//end act 
+    
+    public void controls()
+    {
+        if( Greenfoot.isKeyDown("w") )
+        {
+            
+        } 
+        else if( Greenfoot.isKeyDown("a") )
+        {
+            
+        }
+        else if( Greenfoot.isKeyDown("d") )
+        {
+            
+        }
+        else if( Greenfoot.isKeyDown("s") )
+        {
+            
+        }//end if     
+    }//end controls
 
     //ADDITIONAL METHODS
     public int attack()

@@ -1,16 +1,23 @@
 #Greenfoot properties
-#Wed May 17 11:45:59 ICT 2017
+#Mon May 22 09:46:58 ICT 2017
+class.Hero.image=man01.png
+project.charset=UTF-8
+mainWindow.height=600
+class.Character.superclass=greenfoot.Actor
+version=2.8.0
+class.ll.superclass=greenfoot.World
+class.Bat.image=tux.png
+class.Hero.superclass=Character
+world.lastInstantiated=level
+class.g.superclass=Hero
+class.Bat.superclass=Character
+class.Boss.image=teddybear.png
+mainWindow.y=40
+mainWindow.x=40
 class.Slime.superclass=Character
 class.Slime.image=beeper.png
-class.g.superclass=Hero
-class.Hero.image=man01.png
-mainWindow.width=850
 class.level.superclass=greenfoot.World
-project.charset=UTF-8
-version=2.8.0
-class.Character.superclass=greenfoot.Actor
-world.lastInstantiated=level
-mainWindow.y=40
-class.Hero.superclass=Character
-mainWindow.x=40
-mainWindow.height=600
+mainWindow.width=850
+class.tester.superclass=greenfoot.World
+class.level1.superclass=level
+class.Boss.superclass=Character

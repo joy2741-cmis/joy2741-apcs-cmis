@@ -7,13 +7,41 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public abstract class level extends World
 {
-    ArrayList<Character> enemies = new ArrayList<Character>(); 
-    
-    public level( ArrayList<Character> enemies )
+    ArrayList<Character> enemies = new ArrayList<Character>();
+   
+    public level()
     {
         super(600, 400, 1);
-        this.enemies = enemies;
     }//end constructor
+        
+    public void addSlime()
+    {        
+        Slime slime = new Slime(null);
+        enemies.add(slime);
+        addObject(slime,Greenfoot.getRandomNumber(600),Greenfoot.getRandomNumber(400));
+    }//end addHero
+    
+    public void addBat()
+    {
+        
+    }//end addBat
+    
+    public void addBoss()
+    {
+        
+    }//end addBoss
+    
+    public void addHero()
+    {
+        Hero hero = new Hero(null);
+        addObject(hero,300,200);
+    }//end addHero
+    
+    public ArrayList<Character> getEnemies()
+    {
+        return enemies;
+    }//end getCharacters
 }
