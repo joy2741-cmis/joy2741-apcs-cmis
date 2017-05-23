@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Hero extends Character
+public class Hero extends Character 
 {
     int lvl;
     int exp;
@@ -16,26 +16,26 @@ public class Hero extends Character
 
     public void act() 
     {
-
+        controls();
     }//end act 
     
     public void controls()
     {
         if( Greenfoot.isKeyDown("w") )
         {
-            
+             setLocation(getX(),getY()-1);
         } 
         else if( Greenfoot.isKeyDown("a") )
         {
-            
+            setLocation(getX()-1,getY());
         }
         else if( Greenfoot.isKeyDown("d") )
         {
-            
+            setLocation(getX()+1,getY());
         }
         else if( Greenfoot.isKeyDown("s") )
         {
-            
+            setLocation(getX(),getY()+1);
         }//end if     
     }//end controls
 
@@ -52,7 +52,8 @@ public class Hero extends Character
         {
             if( Greenfoot.isKeyDown("Space"))
             {
-                return true;
+                System.out.println("is fighting!");
+                return true;                
             }
         }//end while
         return false;

@@ -15,6 +15,8 @@ public abstract class level extends World
     public level()
     {
         super(600, 400, 1);
+        Actor healthCounter = new Health();
+        addObject(healthCounter, 80, 20);
     }//end constructor
         
     public void addSlime()
@@ -44,4 +46,5 @@ public abstract class level extends World
     {
         return enemies;
     }//end getCharacters
+    
 }
