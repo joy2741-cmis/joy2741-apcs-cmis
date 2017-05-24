@@ -11,9 +11,7 @@ public class level1 extends level
         {
             addSlime();
         }//end for
-
-        //System.out.println(enemies.size());
-        prepare();
+        freezeEnemies();
     }//end constructor
     
     /**
@@ -22,5 +20,12 @@ public class level1 extends level
      */
     private void prepare()
     {
-    }
+        
+    }//end prepare
+    
+    public void freezeEnemies()
+    {
+        System.out.println(getEnemies().size());
+        
+    }//end freezeEnemies
 }//end class

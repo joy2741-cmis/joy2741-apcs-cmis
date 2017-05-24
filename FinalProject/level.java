@@ -17,6 +17,8 @@ public abstract class level extends World
         super(600, 400, 1);
         Actor healthCounter = new Health();
         addObject(healthCounter, 80, 20);
+        Actor manaCounter = new Mana();
+        addObject(manaCounter, 74, 40);
     }//end constructor
         
     public void addSlime()

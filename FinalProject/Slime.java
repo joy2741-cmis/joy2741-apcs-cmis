@@ -14,13 +14,27 @@ public class Slime extends Character
     {
         super(20, 15, 2, 7);
         this.target = target;
-    }//end constructor
+    }//end constructor       
+
+    public boolean isFighting()
+    {
+        return false;
+    }
     
+    public void setFight( boolean isFighting )
+    {
+        
+        
+
     public void act()
     {
-        moveRandomly();
+        if( isFighting() == false )
+        {
+            moveRandomly();
+        }
+
     }//end act
-    
+
     public void moveRandomly()
     {
         move(1);
@@ -56,7 +70,7 @@ public class Slime extends Character
         setHealth(newHealth);
         return health;
     }//end lowerHealth
-    
+
     public int lowerMana()
     {
         int mana = getMana();
@@ -92,7 +106,7 @@ public class Slime extends Character
     {
         return maxAD;
     }//end getMaxAD    
-        
+
     public int randomEXP()
     {
         int randomEXP = Greenfoot.getRandomNumber(30);

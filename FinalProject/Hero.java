@@ -17,13 +17,14 @@ public class Hero extends Character
     public void act() 
     {
         controls();
+        isFighting();
     }//end act 
-    
+
     public void controls()
     {
         if( Greenfoot.isKeyDown("w") )
         {
-             setLocation(getX(),getY()-1);
+            setLocation(getX(),getY()-1);
         } 
         else if( Greenfoot.isKeyDown("a") )
         {
@@ -48,14 +49,13 @@ public class Hero extends Character
 
     public boolean isFighting()
     {
-        while( isTouching( Slime.class ) )
-        {
-            if( Greenfoot.isKeyDown("Space"))
-            {
-                System.out.println("is fighting!");
-                return true;                
-            }
-        }//end while
+        Actor enemy = getOneObjectAtOffset(0,0,Slime.class);
+        if( enemy != null && Greenfoot.isKeyDown("space"))
+        {      
+            System.out.println("is fighting");
+            enemy.isFighting();
+            return true;
+        }
         return false;
     }//end is Fighting
 
