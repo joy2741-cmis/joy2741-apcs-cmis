@@ -1,30 +1,30 @@
 import greenfoot.*;
 import java.awt.Color;
 /**
- * Write a description of class Mana here.
+ * Write a description of class Health here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mana extends Hero implements HeroStats 
+public class SHealth extends Slime implements HeroStats 
 {
-    private int mana = 50; 
-    private int maxMana = 50;
+    private int health = 20; 
+    private int maxHealth = 20;
     
-    public Mana()
+    public SHealth()
     {
         super(null);
-        setImage(new GreenfootImage("Mana: " + mana + "/" + maxMana, 20, Color.BLACK, Color.WHITE));
+        setImage(new GreenfootImage("Health: " + health + "/" + maxHealth, 20, Color.RED, Color.WHITE));
     }//end constructor
     
     public void increment()
     {
-        mana += 10;
+        health += 10;
     }//end increment()
 
     public void decrement()
     {
-        mana -= 10;
+        health -= 10;
     }//end decrement
 
     public int getNumber(){

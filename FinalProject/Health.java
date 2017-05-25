@@ -6,13 +6,14 @@ import java.awt.Color;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Health extends Actor implements HeroStats 
+public class Health extends Hero implements HeroStats 
 {
     private int health = 50; 
     private int maxHealth = 50;
     
     public Health()
     {
+        super(null);
         setImage(new GreenfootImage("Health: " + health + "/" + maxHealth, 20, Color.BLACK, Color.WHITE));
     }//end constructor
     

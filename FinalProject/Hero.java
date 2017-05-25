@@ -16,8 +16,7 @@ public class Hero extends Character
 
     public void act() 
     {
-        controls();
-        isFighting();
+        controls();     
     }//end act 
 
     public void controls()
@@ -47,16 +46,16 @@ public class Hero extends Character
         return randomAD;
     }//end attack
 
-    public boolean isFighting()
+    public void setTarget()
     {
-        Actor enemy = getOneObjectAtOffset(0,0,Slime.class);
-        if( enemy != null && Greenfoot.isKeyDown("space"))
+        Actor slime = getOneObjectAtOffset(0,0,Slime.class);
+        if( slime != null && Greenfoot.isKeyDown("space"))
         {      
             System.out.println("is fighting");
-            enemy.isFighting();
-            return true;
-        }
-        return false;
+            //slime.showStats();
+            //target = slime;
+            //System.out.println(target);
+        }//end if
     }//end is Fighting
 
     public void resetEXP( int newEXP )
@@ -86,17 +85,19 @@ public class Hero extends Character
     public int skill()
     {
         return 0;
-    }//end skill
+    }//end skill    
 
     public int lowerHealth()
     {
+        /*
         int health = getHealth();
         int damage = target.attack();
         System.out.println("target.attack(): " + damage);
         int newHealth = health - damage;
         setHealth(newHealth);
+         */
         return health;
-    }//end lowerHealth       
+    }//end lowerHealth     
 
     public int randomEXP()
     {

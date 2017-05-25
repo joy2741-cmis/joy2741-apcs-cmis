@@ -24,8 +24,12 @@ public class level1 extends level
     }//end prepare
     
     public void freezeEnemies()
-    {
-        System.out.println(getEnemies().size());
+    {        
         
     }//end freezeEnemies
+    
+    public void note()
+    {
+        System.out.println("set target --> error");
+    }
 }//end class

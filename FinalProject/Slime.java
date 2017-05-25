@@ -1,14 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Slime here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Slime extends Character
 {
     Character target;
+    boolean isFighting = false;
 
     public Slime( Character target )
     {
@@ -16,23 +11,25 @@ public class Slime extends Character
         this.target = target;
     }//end constructor       
 
-    public boolean isFighting()
+    public void setIsFighting( boolean newIsFighting )
     {
-        return false;
-    }
+        isFighting = newIsFighting;
+    }//end setIsFighting
     
-    public void setFight( boolean isFighting )
+    public void showStats()
     {
-        
-        
+        level1 world = (level1) getWorld();       
+        Slime healthCounter = new SHealth();
+        world.addObject(healthCounter, 520, 20);                
+    }//end showStats
 
     public void act()
     {
-        if( isFighting() == false )
+        if( isFighting == false )
         {
             moveRandomly();
         }
-
+        //showStats();
     }//end act
 
     public void moveRandomly()
