@@ -6,21 +6,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Boss extends Character
+public class Boss extends Enemy
 {
     Character target;
+    HeroStats heroStats = new HeroStats();
+    BossStats stats = new BossStats();
+    randomNumberGenerator generator = new randomNumberGenerator();
 
     public Boss( Character target )
-    {
+    {        
         super(100, 80, 30, 70);
+        GreenfootImage boss = getImage();
+        boss.scale( boss.getWidth()/2, boss.getHeight()/2 );
         this.target = target;
     }//end constructor
-    
+
     public void act()
     {
         moveRandomly();
+        attack();
+        isDead();
     }//end act
-    
+
     public void moveRandomly()
     {
         move(1);
@@ -36,11 +43,25 @@ public class Boss extends Character
     }//end moveRandomly
 
     //METHODS INHERITED FROM CHARACTER
-    public int attack()
+    public void attack()
     {
-        int randomAD = getMinAD() + Greenfoot.getRandomNumber(getMaxAD() - getMinAD());  
-        return randomAD;
+        if( isTouching(Hero.class) )
+        {
+            if( Greenfoot.getRandomNumber(150) == 0 )
+            {
+                int AD = generator.bossDamage();
+                System.out.println("Boss AD: " + AD);
+                System.out.println("Hero Health: " + heroStats.getHealth());
+                heroStats.setHealth(heroStats.getHealth() - AD);
+                System.out.println("Hero Health After: " + heroStats.getHealth());
+            }//end if
+        }//end if
     }//end attack
+    
+    public void slowed()
+    {
+        Greenfoot.delay(5);
+    }
 
     public int skill()
     {
@@ -49,14 +70,9 @@ public class Boss extends Character
 
     public int lowerHealth()
     {
-        int health = getHealth();
-        int damage = target.attack();
-        System.out.println("target.attack(): " + damage);
-        int newHealth = health - damage;
-        setHealth(newHealth);
-        return health;
+        return 0;
     }//end lowerHealth
-    
+
     public int lowerMana()
     {
         int mana = getMana();
@@ -92,7 +108,7 @@ public class Boss extends Character
     {
         return maxAD;
     }//end getMaxAD    
-        
+
     public int randomEXP()
     {
         int randomEXP = Greenfoot.getRandomNumber(30);
@@ -101,8 +117,12 @@ public class Boss extends Character
 
     public boolean isDead()
     {
-        if( getHealth() == 0 )
+        if( stats.getHealth() == 0 )
         {
+            //BossLevel world = (BossLevel) getWorld();
+            //world.removeObject(this);
+            System.out.println("You defeated the boss");
+            Greenfoot.stop();
             return true;
         }
         return false;

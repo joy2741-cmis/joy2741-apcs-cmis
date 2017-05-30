@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=HealthCounter
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ HealthCounter\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=HealthCounter()
+comment2.params=
+comment2.target=void\ bumpCount()
+comment2.text=\r\n\ Increase\ the\ total\ amount\ displayed\ on\ the\ counter,\ by\ a\ given\ amount.\r\n
+numComments=3

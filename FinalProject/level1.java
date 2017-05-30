@@ -11,7 +11,13 @@ public class level1 extends level
         {
             addSlime();
         }//end for
-        freezeEnemies();
+        
+        
+        Actor healthCounter = new HealthCounter();
+        addObject(healthCounter, 80, 20);
+        Actor manaCounter = new ManaCounter();
+        addObject(manaCounter, 76, 40);
+        
     }//end constructor
     
     /**
@@ -22,14 +28,5 @@ public class level1 extends level
     {
         
     }//end prepare
-    
-    public void freezeEnemies()
-    {        
-        
-    }//end freezeEnemies
-    
-    public void note()
-    {
-        System.out.println("set target --> error");
-    }
+   
 }//end class

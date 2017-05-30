@@ -10,15 +10,15 @@ import java.util.ArrayList;
 
 public abstract class level extends World
 {
-    ArrayList<Character> enemies = new ArrayList<Character>();
+    ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
     public level()
     {
         super(600, 400, 1);
-        Actor healthCounter = new Health();
-        addObject(healthCounter, 80, 20);
-        Actor manaCounter = new Mana();
-        addObject(manaCounter, 74, 40);
+        //Actor healthCounter = new Health();
+        //addObject(healthCounter, 80, 20);
+        //Actor manaCounter = new Mana();
+        //addObject(manaCounter, 74, 40);
     }//end constructor
 
     public void addSlime()
@@ -35,7 +35,8 @@ public abstract class level extends World
 
     public void addBoss()
     {
-
+        Boss boss = new Boss(null);
+        addObject(boss,Greenfoot.getRandomNumber(600),Greenfoot.getRandomNumber(400));
     }//end addBoss
 
     public void addHero()
@@ -44,7 +45,7 @@ public abstract class level extends World
         addObject(hero,300,200);
     }//end addHero
 
-    public ArrayList<Character> getEnemies()
+    public ArrayList<Enemy> getEnemies()
     {
         return enemies;
     }//end getCharacters

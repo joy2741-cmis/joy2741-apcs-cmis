@@ -1,13 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Slime extends Character
+public class Slime extends Enemy
 {
-    Character target;
+    Actor target;
     boolean isFighting = false;
 
-    public Slime( Character target )
+    public Slime( Actor target )
     {
         super(20, 15, 2, 7);
+        GreenfootImage boss = getImage();
+        boss.scale( boss.getWidth()/6, boss.getHeight()/6 );
         this.target = target;
     }//end constructor       
 
@@ -19,8 +21,8 @@ public class Slime extends Character
     public void showStats()
     {
         level1 world = (level1) getWorld();       
-        Slime healthCounter = new SHealth();
-        world.addObject(healthCounter, 520, 20);                
+        //Slime healthCounter = new SHealth();
+        //world.addObject(healthCounter, 520, 20);                
     }//end showStats
 
     public void act()
@@ -30,12 +32,13 @@ public class Slime extends Character
             moveRandomly();
         }
         //showStats();
+        isDead();
     }//end act
 
     public void moveRandomly()
     {
         move(1);
-        int random = Greenfoot.getRandomNumber(4);
+        int random = Greenfoot.getRandomNumber(6);
         if( random == 0 )
         {
             turn(-15);
@@ -47,10 +50,10 @@ public class Slime extends Character
     }//end moveRandomly
 
     //METHODS INHERITED FROM CHARACTER
-    public int attack()
+    public void attack()
     {
         int randomAD = getMinAD() + Greenfoot.getRandomNumber(getMaxAD() - getMinAD());  
-        return randomAD;
+        //return randomAD;
     }//end attack
 
     public int skill()
@@ -60,11 +63,7 @@ public class Slime extends Character
 
     public int lowerHealth()
     {
-        int health = getHealth();
-        int damage = target.attack();
-        System.out.println("target.attack(): " + damage);
-        int newHealth = health - damage;
-        setHealth(newHealth);
+        
         return health;
     }//end lowerHealth
 
@@ -114,6 +113,8 @@ public class Slime extends Character
     {
         if( getHealth() == 0 )
         {
+            level1 world = (level1) getWorld();
+            world.removeObject(this);
             return true;
         }
         return false;

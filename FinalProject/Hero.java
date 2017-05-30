@@ -1,24 +1,43 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Hero extends Character 
+public class Hero extends Actor
 {
-    int lvl;
-    int exp;
-    Character target;
+    HeroStats stats = new HeroStats();
+    int health = stats.getHealth();
+    int mana = stats.getMana();
+    int minAD = stats.getMinAD();
+    int maxAD = stats.getMaxAD();
+    int EXP = stats.getEXP();
+    randomNumberGenerator generator = new randomNumberGenerator();
+    BossStats boss = new BossStats();
 
-    public Hero( Character target )
+    int lvl;
+    Enemy target;
+
+    public Hero( Enemy target )
     {
-        super(50, 50, 5, 20);
+        GreenfootImage hero = getImage();
+        hero.scale( hero.getWidth()/6, hero.getHeight()/6 );
         lvl = 1;
-        exp = 0;
-        this.target = target;
+        this.target = (Enemy) target;
     }//end constructor
 
     public void act() 
     {
-        controls();     
+        controls();   
+        setTarget();
+        attack();
+        isDead();
+        setTargetSlime();
+        attackSlime();
     }//end act 
+    
+    public int getHealth()
+    {
+        return health;
+    }
 
+    //METHODS
     public void controls()
     {
         if( Greenfoot.isKeyDown("w") )
@@ -40,27 +59,82 @@ public class Hero extends Character
     }//end controls
 
     //ADDITIONAL METHODS
-    public int attack()
+    public void attack()
     {
-        int randomAD = getMinAD() + Greenfoot.getRandomNumber(getMaxAD() - getMinAD());
-        return randomAD;
+        if( target != null && isTouching(Boss.class) && Greenfoot.isKeyDown("x") )
+        {
+            int AD = generator.heroDamage();
+            System.out.println("AD: " + AD);
+            System.out.println("Boss Health: " + boss.getHealth());
+            boss.setHealth(boss.getHealth() - AD);
+            System.out.println("Boss Health After: " + boss.getHealth());
+            turn(180);
+            move(7);
+            turn(-180);
+        }
+        else if ( target != null && isTouching(Boss.class) && Greenfoot.isKeyDown("y") )
+        {
+            int AD = generator.heroSkill();
+            System.out.println("AD Skill: " + AD);
+            System.out.println("Boss Health: " + boss.getHealth());
+            boss.setHealth(boss.getHealth() - AD);
+            System.out.println("Boss Health After Skill: " + boss.getHealth());
+            turn(180);
+            move(7);
+            turn(-180);
+            stats.setMana(stats.getMana()-5);
+        }
     }//end attack
-
+    
+     public void attackSlime()
+    {
+        if( target != null && isTouching(Slime.class) && Greenfoot.isKeyDown("x") )
+        {
+            int AD = generator.heroDamage();
+            System.out.println("AD: " + AD);
+            System.out.println("Slime's Health: " + target.getHealth());
+            target.setHealth(target.getHealth() - AD);
+            System.out.println("Slime's Health Afterward: " + target.getHealth());
+            turn(180);
+            move(7);
+            turn(-180);
+        }
+        else if ( target != null && isTouching(Slime.class) && Greenfoot.isKeyDown("y") )
+        {
+            int AD = generator.heroSkill();
+            System.out.println("AD Skill: " + AD);
+            System.out.println("Slime's Health: " + target.getHealth());
+            target.setHealth(target.getHealth() - AD);
+            System.out.println("Slime's Health after using skill: " + target.getHealth());
+            turn(180);
+            move(7);
+            turn(-180);
+            stats.setMana(stats.getMana()-5);
+        }
+    }//end attack
+    
     public void setTarget()
     {
-        Actor slime = getOneObjectAtOffset(0,0,Slime.class);
-        if( slime != null && Greenfoot.isKeyDown("space"))
-        {      
-            System.out.println("is fighting");
-            //slime.showStats();
-            //target = slime;
-            //System.out.println(target);
-        }//end if
+        Enemy boss = (Boss)getOneIntersectingObject(Boss.class);
+        if( boss != null )
+        {
+            target = (Boss) boss;
+        }
     }//end is Fighting
+    
+    public void setTargetSlime()
+    {
+        Slime slime = (Slime)getOneIntersectingObject(Slime.class);
+        if( slime != null )
+        {
+            target = (Slime) slime;
+        }
+    }//end is Fighting
+
 
     public void resetEXP( int newEXP )
     {
-        exp = 0;
+        EXP = 0;
     }
 
     public int getLvl()
@@ -71,54 +145,26 @@ public class Hero extends Character
     public void levelUp()
     {
         int requirement = 100 * lvl;
-        if( exp == requirement )
+        if(EXP == requirement )
         {
             lvl++;
-            setMaxAD(getMaxAD() + Greenfoot.getRandomNumber(30)); //increase AD
-            setHealth(getHealth() + Greenfoot.getRandomNumber(50)); //increase Health
-            setMana(getMana() + Greenfoot.getRandomNumber(50)); //increase Mana
-            resetEXP(0);
+            stats.setMaxAD(stats.getMaxAD() + Greenfoot.getRandomNumber(30)); //increase AD
+            stats.setHealth(stats.getHealth() + Greenfoot.getRandomNumber(50)); //increase Health
+            stats.setMana(stats.getMana() + Greenfoot.getRandomNumber(50)); //increase Mana
+            stats.setEXP(0);
         }
     }
 
-    //METHODS INHERITED FROM CHARACTER
-    public int skill()
+    public boolean isDead()
     {
-        return 0;
-    }//end skill    
+        if( stats.getHealth() == 0 )
+        {
+            System.out.println("Game Over");
+            Greenfoot.stop();
+            return true;
+        }
 
-    public int lowerHealth()
-    {
-        /*
-        int health = getHealth();
-        int damage = target.attack();
-        System.out.println("target.attack(): " + damage);
-        int newHealth = health - damage;
-        setHealth(newHealth);
-         */
-        return health;
-    }//end lowerHealth     
-
-    public int randomEXP()
-    {
-        int randomEXP = Greenfoot.getRandomNumber(30) * lvl;
-        return randomEXP;
-    }//end randomEXP
-
-    public int lowerMana()
-    {
-        int mana = getMana();
-        return mana;
-    }//end lowerMana
-
-    public int regeneratesHealth()    
-    {
-        return 0;
-    }//end lowerMana
-
-    public int regeneratesMana()
-    {
-        return 0;
-    }//end lowerMana
+        return false;
+    }//end isDead()
 
 }
